@@ -20,9 +20,9 @@
 |city|string|null: false|
 |address_1|string|null: false|
 |address_2|string||
-|password_confirm|string|null: false|　←DBで管理する必要あるかな？
-|family_name_deliver|string|null: false|　←　family_nameから引っ張れないか
-|name_deliver|string|null: false|　← nameから引っ張れないか
+|password_confirm|string|null: false|
+|family_name_deliver|string|null: false|
+|name_deliver|string|null: false|
 
 ### Association
 - has_many :comment
