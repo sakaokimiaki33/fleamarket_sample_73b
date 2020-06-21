@@ -1,4 +1,4 @@
-# README
+# fleamarket_sample_73b DB設計
 
 ## userテーブル
 
