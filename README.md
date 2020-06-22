@@ -15,18 +15,28 @@
 |email|string|null: false|
 |password|string|null: false|
 |birthday|integer|null: false|
+
+
+### Association
+- has_many :comments
+- has_many :items
+- has_one :address
+
+
+## addressテーブル
+|Column|Type|Options|
+|------|----|-------|
 |family_name_deliver|string|null: false|
 |name_deliver|string|null: false|
 |postal_code|integer|null: false|
 |prefecture|string|null: false|
 |city|string|null: false|
-|address_1|string|null: false|
-|address_2|string||
-
+|block|string|null: false|
+|building|string||
+|user_id|integer|null: false, foreign_key: true|
 
 ### Association
-- has_many :comment
-- has_many :item
+- belong_to :user
 
 
 ## commentテーブル
@@ -59,7 +69,7 @@
 |category_small_id|integer|null: false,foreign_key: true|
 
 ### Association
-has_many :comment
+has_many :comments
 belong_to :user
 belong_to :category_small
 
