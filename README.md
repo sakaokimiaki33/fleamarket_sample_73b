@@ -66,7 +66,7 @@
 |sender|text|null: false|
 |shipping_date|string|null: false|
 |user_id|integer|null: false, foreign_key: true|
-|category_small_id|integer|null: false,foreign_key: true|
+|category_id|integer|null: false,foreign_key: true|
 
 ### Association
 has_many :comments, dependent: :destroy
