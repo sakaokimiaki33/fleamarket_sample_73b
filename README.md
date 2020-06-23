@@ -71,38 +71,15 @@
 ### Association
 has_many :comments, dependent: :destroy
 belong_to :user
-belong_to :category_small
+belong_to :category
 
 
-## category_bigテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-
-### Association
-has_many :category_middle
-
-
-## category_middleテーブル
+## categoryテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|category_big_id|integer|null: false, foreign_key: true|
+|ancestry|integer|index: true|
 
 ### Association
-has_many :category_small
-belong_to :category_big
-
-
-## category_smallテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-|category_middle_id|integer|null: false, foreign_key: true|
-
-### Association
-has_many :item
-belong_to :category_middle
+has_many :items
