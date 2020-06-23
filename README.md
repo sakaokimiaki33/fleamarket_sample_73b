@@ -18,9 +18,9 @@
 
 
 ### Association
-- has_many :comments
-- has_many :items
-- has_one :address
+- has_many :comments, dependent: :destroy
+- has_many :items, dependent: :destroy
+- has_one :address, dependent: :destroy
 
 
 ## addressテーブル
@@ -69,7 +69,7 @@
 |category_small_id|integer|null: false,foreign_key: true|
 
 ### Association
-has_many :comments
+has_many :comments, dependent: :destroy
 belong_to :user
 belong_to :category_small
 
