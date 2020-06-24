@@ -1,6 +1,6 @@
 # fleamarket_sample_73b DB設計
 
-## userテーブル
+## usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -20,10 +20,22 @@
 ### Association
 - has_many :comments, dependent: :destroy
 - has_many :items, dependent: :destroy
+- has_many :cards, dependent: :destroy
 - has_one :address, dependent: :destroy
 
 
-## addressテーブル
+## cardsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|customer_id|string|null: false|
+|card_id|string|null: false|
+
+### Association
+- belong_to :user
+
+
+## addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |family_name_deliver|string|null: false|
@@ -39,7 +51,7 @@
 - belong_to :user
 
 
-## commentテーブル
+## commentsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -52,7 +64,7 @@
 - belong_to :item
 
 
-## itemテーブル
+## itemsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -74,7 +86,7 @@ belong_to :user
 belong_to :category
 
 
-## categoryテーブル
+## categoriesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
