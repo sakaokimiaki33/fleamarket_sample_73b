@@ -1,0 +1,91 @@
+$basic-color:rgb(93, 250, 255);
+$font-color:white;
+
+@mixin list() {
+  width:150px;
+  height: 150px;
+  background-color: $basic-color;
+  border-radius: 5px;
+  position: fixed;
+  right:50px;
+  z-index: 500;
+}
+
+@mixin list_p {
+  color: $font-color;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 80px;
+}
+
+.header{
+  height: auto;
+  width: 100%;
+  &__inner{
+    display: flex;
+    padding: 30px 40px;
+    justify-content: center;
+    &__image{
+      width: 15%;
+    }
+    &__search{
+      width: 85%;
+      .input{
+        height: 20px;
+        width: 70%;
+        padding: 5px;
+        font-size: 16px;
+      }
+      .submit{
+        padding: 8px 15px;
+        background-color: $basic-color;
+        outline: none;
+        i{
+          color: $font-color;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  &__lists{
+    display: flex;
+    justify-content: space-between;
+    a{
+      margin: 0 40px 20px;
+    }
+  }
+}
+
+.footer{
+  height: 300px;
+  width: 100vw;
+  background-color: rgb(32, 32, 32);
+  position: relative;
+  &__menus{
+    display: flex;
+    justify-content: center;
+    &__menu{
+      margin: 40px 30px 20px;
+      h1{
+        font-size: 18px;
+        color: $font-color;
+      }
+      ul{
+        margin: 40px 0 20px;
+        li{
+          margin-bottom: 10px;
+          a{
+            color: $font-color;
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+  &__icon{
+    margin:0 auto;
+    position: absolute;
+    bottom:10%;
+    left:43%;
+  }
+}
