@@ -1,6 +1,6 @@
 .footer
   .footer__menus
-    .footer__menus--menu 
+    .footer__menus__menu 
       %h1
         FURIMAについて
       %ul 
@@ -12,7 +12,7 @@
           = link_to "FURIMA利用規約", "#"
         %li 
           = link_to "ポイントに関する特約", "#"
-    .footer__menus--menu 
+    .footer__menus__menu 
       %h1
         FURIMAを見る
       %ul 
@@ -20,7 +20,7 @@
           = link_to "カテゴリー一覧", "#"
         %li 
           = link_to "ブランド一覧", "#"
-    .footer__menus--menu 
+    .footer__menus__menu 
       %h1 
         ヘルプ&ガイド
       %ul 
@@ -30,5 +30,6 @@
           = link_to "FURIMAロゴガイドライン", "#"
         %li 
           = link_to "お知らせ", "#"
-    .footer__logo 
-      = image_tag "material/logo/logo-white.png",height:"50",with:"200"
+  .footer__logo 
+    = image_tag "material/logo/logo-white.png",height:"50",with:"200"
+  %p © FURIMA
