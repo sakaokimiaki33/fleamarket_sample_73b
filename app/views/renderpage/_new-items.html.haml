@@ -6,71 +6,67 @@
       %h3.ew-items__products__head__title
         = link_to "新規投稿商品", "#"
     .new-items__products__lists
-      .new-items__products__lists__list
-        = link_to "/"
-        .new-items__products__lists__list--pic
-          = image_tag "material/pict/food1.jpeg"
-        .new-items__products__lists__list--body
-          %h3.new-items__products__lists__list--body__title
-            ee
-          .new-items__products__lists__list--body__details
-            %ul
-              %li.new-items__products__lists__list--body__details--cost
-                1000円
-              %li
-                ★
-              %li
-                0
-            %p
-              （税込）
-      .new-items__products__lists__list
-        = link_to "/"
-        .new-items__products__lists__list--pic
-          = image_tag "material/pict/food2.png"
-        .new-items__products__lists__list--body
-          %h3.new-items__products__lists__list--body__title
-            product3
-          .new-items__products__lists__list--body__details
-            %ul
-              %li.new-items__products__lists__list--body__details--cost
-                21000円
-              %li
-                ★
-              %li
-                0
-            %p
-              （税込）        
-      .new-items__products__lists__list
-        = link_to "/"
-        .new-items__products__lists__list--pic
-          = image_tag "material/pict/food3.png"
-        .new-items__products__lists__list--body
-          %h3.new-items__products__lists__list--body__title
-            product2
-          .new-items__products__lists__list--body__details
-            %ul
-              %li.new-items__products__lists__list--body__details--cost
-                3890000円
-              %li
-                ★
-              %li
-                0
-            %p
-              （税込）
-      .new-items__products__lists__list
-        = link_to "/"
-        .new-items__products__lists__list--pic
-          = image_tag "material/pict/food4.png"
-        .new-items__products__lists__list--body
-          %h3.new-items__products__lists__list--body__title
-            product4
-          .new-items__products__lists__list--body__details
-            %ul
-              %li.new-items__products__lists__list--body__details--cost
-                209000円
-              %li
-                ★
-              %li
-                0
-            %p
-              （税込） 
+      = link_to "/" do
+        .new-items__products__lists__list
+          .new-items__products__lists__list--pic
+            = image_tag "material/pict/food1.jpeg"
+          .new-items__products__lists__list--body
+            %h3.new-items__products__lists__list--body__title
+              ee
+            .new-items__products__lists__list--body__details
+              %ul
+                %li.new-items__products__lists__list--body__details--cost
+                  1000円
+                %li
+                  ★
+                %li
+                  0
+              %p （税込）
+      = link_to "/" do
+        .new-items__products__lists__list
+          .new-items__products__lists__list--pic
+            = image_tag "material/pict/food2.png"
+          .new-items__products__lists__list--body
+            %h3.new-items__products__lists__list--body__title
+              product3
+            .new-items__products__lists__list--body__details
+              %ul
+                %li.new-items__products__lists__list--body__details--cost
+                  21000円
+                %li
+                  ★
+                %li
+                  0
+              %p （税込）        
+      = link_to "/" do
+        .new-items__products__lists__list
+          .new-items__products__lists__list--pic
+            = image_tag "material/pict/food3.png"
+          .new-items__products__lists__list--body
+            %h3.new-items__products__lists__list--body__title
+              product2
+            .new-items__products__lists__list--body__details
+              %ul
+                %li.new-items__products__lists__list--body__details--cost
+                  3890000円
+                %li
+                  ★
+                %li
+                  0
+              %p （税込）
+      = link_to "/" do
+        .new-items__products__lists__list
+          .new-items__products__lists__list--pic
+            = image_tag "material/pict/food4.png"
+          .new-items__products__lists__list--body
+            %h3.new-items__products__lists__list--body__title
+              product4
+            .new-items__products__lists__list--body__details
+              %ul
+                %li.new-items__products__lists__list--body__details--cost
+                  209000円
+                %li
+                  ★
+                %li
+                  0
+              %p （税込） 
