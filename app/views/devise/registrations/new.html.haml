@@ -1,0 +1,64 @@
+#wrapper
+  = image_tag '/images/logo/logo.png', id: 'logo'
+
+  #regist
+    #error
+      = devise_error_messages
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |form|
+      %p#form_name プロフィール画像
+      = form.file_field :user_img, id: 'regist__img'
+
+      %p#form_name
+        氏名
+        %span#form_name__small (全角)
+        %span#required 必須
+      = form.text_field :family_name, id: 'regist__family_name', placeholder: '姓', autocomplete: "family-name", required: 'required'
+      = form.text_field :name, id: 'regist__given_name', placeholder: '名', autocomplete: "given-name", required: 'required'
+
+      %p#form_name
+        氏名
+        %span#form_name__small (フリガナ・全角)
+        %span#required 必須
+      = form.text_field :family_name_kana, id: 'regist__family_name_kana', placeholder: '姓（カナ）', required: 'required'
+      = form.text_field :name_kana, id: 'regist__name_kana', placeholder: '名（カナ）', required: 'required'
+
+      %p#form_name
+        ニックネーム
+        %span#required 必須
+      = form.text_field :nickname, id: 'regist__nickname', placeholder: 'ニックネーム', required: 'required'
+
+      %p#form_name
+        性別
+      #regist__gender
+        = form.radio_button :gender, "男性"
+        男性
+        = form.radio_button :gender, "女性"
+        女性
+
+      %p#form_name
+        誕生日
+        %span#required 必須
+      = form.date_field :birthday, id: 'regist__birthday', placeholder: '誕生日', required: 'required'
+
+      %p#form_name
+        電話番号
+        %span#form_name__small (半角)
+      = form.telephone_field :phone, id: 'regist__phone', placeholder: '電話番号'
+
+      %p#form_name
+        メールアドレス
+        %span#required 必須
+      = form.email_field :email, id: 'regist__email', placeholder: 'メールアドレス', autocomplete: "email", required: 'required'
+
+      %p#form_name
+        パスワード
+        %span#required 必須
+      = form.password_field :password, id: 'regist__password', placeholder: 'パスワード', required: 'required'
+
+      %p#form_name
+        パスワード
+        %span#form_name__small (確認用)
+        %span#required 必須
+      = form.password_field :password_confirmation, id: 'regist__password', placeholder: 'パスワード（確認用）', required: 'required'
+
+      = form.submit "新規登録", id: 'regist__submit'
