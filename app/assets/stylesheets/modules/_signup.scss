@@ -10,14 +10,7 @@
     margin: 0 auto 50px;
     position: relative;
 
-    #error {
-      .error_field {
-        background-color: lighten(#ff3300, 40%);
-        
-      }
-    }
-
-    #form_name {
+    .form_name {
       @include Form_Name;
 
       &__small {
@@ -25,7 +18,7 @@
         font-weight: normal;
       }
 
-      #required {
+      .required {
         @include required;
       }
     }
