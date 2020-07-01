@@ -1,5 +1,6 @@
 .introduction {
   padding: 60px 20px;
+  box-sizing: border-box;
   &__title  {
     text-align: center;
     font-size: 26px;
@@ -12,8 +13,8 @@
   &__lists {
     text-align: center;
     display: flex;
-    max-width: 1080px;
-    width: 100vw;
+    max-width: 1020px;
+    width: 100%;
     margin: 0 auto;
     &__list {
       width: 30%;
@@ -59,4 +60,8 @@
       }
     }
   }
+}
+
+.last {
+  margin: 16px 0 0;
 }
