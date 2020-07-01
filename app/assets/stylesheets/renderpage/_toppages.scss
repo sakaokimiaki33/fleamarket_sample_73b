@@ -75,7 +75,7 @@ $font-color:white;
 
 .part_download{
   height: 400px;
-  width: 100vw;
+  width: 100%;
   background-image: image-url("material/pict/bg-appBanner-pict.jpg");
   background-size: cover;
   position: relative;
@@ -102,7 +102,7 @@ $font-color:white;
 
 .footer{
   height: 340px;
-  width: 100vw;
+  width: 100%;
   background-color: rgb(32, 32, 32);
   position: relative;
   &__menus{
