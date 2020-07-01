@@ -9,36 +9,39 @@
       .buyinfo__content__item--text
         %p
           インナー  4枚セット 黒 グレー
-      .buyinfo__content__item--form
-        %span.buyinfo__content__item--form--free
-          送料込み
-          %p.buyinfo__content__item--form--price
+        %p.buyinfo__content__item--form
+          %span.buyinfo__content__item--form--free
+            送料込み
+          %span.buyinfo__content__item--form--price
             ¥1000
     .buyinfo__content__cost
-      .buyinfo__content__cost--price 
-        支払い金額
+      .buyinfo__content__cost--price
+        %p 
+          支払い金額
         %span.buyinfo__content__cost--pay
           ¥1000
     .buyinfo__content__info{ id: "#" }
       .buyinfo__content__info--inner
-        %h3 支払方法
-        = link_to "#" do
-          %span 変更する  ＞
-          = icon 'fas', 'chevron-right'
-        %p
-          クレジットカード
-          -#以下カード情報を表示
-        %p
-          ************8091
-        %p
-          有効期限 01 / 25
+        .buyinfo__content__info--inner--title
+          %h3 支払方法
+          = link_to "#" do
+            %span 変更する  ＞
+            = icon 'fas', 'chevron-right'
+        %address.info__content__crejiit
+          %p
+            クレジットカード
+          %p
+            ************8091
+          %p
+            有効期限 01 / 25
         
     .buyinfo__content__deliver
       .buyinfo__content__deliver--inner
-        %h3 配送先
-        = link_to "#" do
-          %span 変更する  ＞
-          = icon 'fas', 'chevron-right'
+        .buyinfo__content__deliver--inner--top
+          %h3 配送先
+          = link_to "#" do
+            %span 変更する  ＞
+            = icon 'fas', 'chevron-right'
         %address.info__content__user
           %p
             〒601-8468
