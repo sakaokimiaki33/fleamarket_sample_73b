@@ -24,7 +24,7 @@
       }
     }
     .product__image--small{
-      .product__image--small__list{
+      &__list{
         padding-inline-start: 0;
         &__1{
           list-style: none;
