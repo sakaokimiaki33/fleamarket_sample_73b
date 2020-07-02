@@ -7,12 +7,11 @@
       .buyinfo__content__item--images
         = image_tag "material/pict/pict-reason-02.jpg"
       .buyinfo__content__item--text
-        %h3
+        %p
           インナー  4枚セット 黒 グレー
-        %p.buyinfo__content__item--form
-          %span.buyinfo__content__item--form--free
-            送料込み
-          %span.buyinfo__content__item--form--price
+        %p.buyinfo__content__item--text__form
+          送料込み
+          %span
             ¥1000
     .buyinfo__content__cost
       .buyinfo__content__cost--price
@@ -23,10 +22,13 @@
     .buyinfo__content__info
       .buyinfo__content__info--cont
         .buyinfo__content__info--cont--title
-          %h3 支払方法
-          = link_to "#" do
-            %span 変更する  ＞
-            = icon 'fas', 'chevron-right'
+          %h3
+            支払方法
+          .buyinfo__content__info--cont--link
+            = link_to "#" do
+              %span
+                変更する  ＞
+              = icon 'fas', 'chevron-right'
         %address.info__content__crejiit
           %p
             クレジットカード
@@ -38,10 +40,13 @@
     .buyinfo__content__deliver
       .buyinfo__content__deliver--inner
         .buyinfo__content__deliver--inner--top
-          %h3 配送先
-          = link_to "#" do
-            %span 変更する  ＞
-            = icon 'fas', 'chevron-right'
+          %h3
+            配送先
+          .buyinfo__content__deliver--inner--top--link
+            = link_to "#" do
+              %span
+                変更する  ＞
+              = icon 'fas', 'chevron-right'
         %address.info__content__user
           %p
             〒601-8468
