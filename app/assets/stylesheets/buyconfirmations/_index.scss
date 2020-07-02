@@ -1,8 +1,6 @@
   
   .buyinfo{
     width: 70%;
-    // height: 100%;
-    // background-color: blue;
     margin: 0 auto;
     &__content{
       margin: auto;
@@ -12,7 +10,7 @@
       background-color: white;
       h2{
         font-size: 22px;
-        padding: 16px;
+        padding: 32px 16px;
         line-height: 1px;
         text-align: center;
         border-style: solid;
@@ -38,29 +36,27 @@
           width: 247px;
           height: 1px;
           margin-left: 16px;
-          p{
+          h3{
             font-size: 14px;
             margin-bottom: 8px;
-            line-height: 1.4em;
+            line-height: 10px;
+            text-align: left;
+            font-weight: normal;
           }
-        }
-        p{
-          // display: flex;
-          width: 247px;
-          height: 14px;
-          // text-align: right;
-          span{
-            font-size: 12px;
+          p{
             display: flex;
+            width: 247px;
+            height: 14px;
+            text-align: right;
             display: block;
-            // justify-content: right;
-            // text-align: right;
+            span{
+              font-size: 12px;
+            }
+            span{
+              font-size: 13px;
+              font-weight: bold;
+            }          
           }
-          span{
-            font-size: 13px;
-            font-weight: bold;
-            // display: block;
-          }          
         }
       }
       &__cost{
@@ -76,10 +72,15 @@
           justify-content: space-between;
           p{
             font-size: 18px;
+            display: block;
           }
+        }
+        &--pay{
+          display: block;
           span{
             font-size: 18px;
             font-weight: bold;
+            display: block;
           }
         }
       }
@@ -90,8 +91,8 @@
         margin: auto;
         width: 375px;
         height: 80px;
-        &--inner{
-          // display: inline-block;
+        &--cont{
+          // padding: 32px 16px;
           &--title{
             display: flex;
             justify-content: space-between;
@@ -100,15 +101,12 @@
               font-weight: bold;
               margin-bottom: 8px;
             }
-            a{
-              display: block;
-              span{
-                font-size: 14px;
-                font-weight: bold;
-                color: #0095EE;
+            span{
+              font-size: 14px;
+              font-weight: bold;
+              color: #0095EE;
               }
             }
-          }
           address{
             font-size: 14px;
           }
@@ -131,13 +129,12 @@
               font-weight: bold;
               margin-bottom: 8px;
             }
-            a{
+            span{
+              font-size: 14px;
+              font-weight: bold;
+              color: #0095EE;
+              margin-left: 50px;
               display: block;
-              span{
-                font-size: 14px;
-                font-weight: bold;
-                color: #0095EE;
-              }
             }
           }
           address{

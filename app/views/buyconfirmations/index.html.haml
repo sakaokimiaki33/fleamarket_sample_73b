@@ -7,7 +7,7 @@
       .buyinfo__content__item--images
         = image_tag "material/pict/pict-reason-02.jpg"
       .buyinfo__content__item--text
-        %p
+        %h3
           インナー  4枚セット 黒 グレー
         %p.buyinfo__content__item--form
           %span.buyinfo__content__item--form--free
@@ -18,11 +18,11 @@
       .buyinfo__content__cost--price
         %p 
           支払い金額
-        %span.buyinfo__content__cost--pay
-          ¥1000
-    .buyinfo__content__info{ id: "#" }
-      .buyinfo__content__info--inner
-        .buyinfo__content__info--inner--title
+      .buyinfo__content__cost--pay
+        %span ¥1000
+    .buyinfo__content__info
+      .buyinfo__content__info--cont
+        .buyinfo__content__info--cont--title
           %h3 支払方法
           = link_to "#" do
             %span 変更する  ＞
