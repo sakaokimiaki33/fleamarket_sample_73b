@@ -6,4 +6,5 @@ Rails.application.routes.draw do
       get 'index', to: 'buyconfirmations#index'
     end
   end
+  
 end
