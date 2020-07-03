@@ -1,19 +1,19 @@
-@mixin Form_Name {
-  font-size: 0.8rem;
-  font-weight: bold;
-}
+// @mixin Form_Name {
+//   font-size: 0.8rem;
+//   font-weight: bold;
+// }
 
-@mixin required {
-  color: #ffffff;
-  background-color: lighten(#ff3300, 10%);
-  font-size: 0.6rem;
-  padding: 2px;
-}
+// @mixin required {
+//   color: #ffffff;
+//   background-color: lighten(#ff3300, 10%);
+//   font-size: 0.6rem;
+//   padding: 2px;
+// }
 
-@mixin Form_Input {
-  width: 100%;
-  height: 30px;
-  border: solid 1px #eeeeee;
-  margin: 5px 0 20px;
-  display: block;
-}
+// @mixin Form_Input {
+//   width: 100%;
+//   height: 30px;
+//   border: solid 1px #eeeeee;
+//   margin: 5px 0 20px;
+//   display: block;
+// }
