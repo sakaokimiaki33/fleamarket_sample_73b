@@ -1,9 +1,19 @@
 #wrapper {
+  width: calc(700px * 0.75);
+
   #logo {
     @include FURIMA_Logo;
+    margin-bottom: 32px;
   }
 
-  #regist {
+  h2 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  #Account_Edit {
     width: 300px;
     margin: 0 auto 50px;
     position: relative;
