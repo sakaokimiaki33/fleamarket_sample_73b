@@ -1,0 +1,87 @@
+#wrapper {
+  #logo {
+    /* @include FURIMA_Logo; */
+  }
+
+  #regist {
+    width: 300px;
+    margin: 0 auto 50px;
+    position: relative;
+
+    .form_name {
+      /* @include Form_Name; */
+
+      &__small {
+        font-size: 0.6rem;
+        font-weight: normal;
+      }
+
+      .required {
+        /* @include required; */
+      }
+    }
+
+    &__img {
+      /* @include Form_Input; */
+      border: none;
+    }
+
+    &__family_name {
+      /* @include Form_Input; */
+      width: 48%;
+      float: left;
+    }
+
+    &__given_name {
+      /* @include Form_Input; */
+      width: 48%;
+    }
+
+    &__family_name_kana {
+      /* @include Form_Input; */
+      width: 48%;
+      float: left;
+    }
+
+    &__name_kana {
+      /* @include Form_Input; */
+      width: 48%;
+    }
+
+    &__nickname {
+      /* @include Form_Input; */
+    }
+
+    #regist__gender {
+      /* @include Form_Input; */
+      border: none;
+    }
+
+    &__birthday {
+      /* @include Form_Input; */
+    }
+
+    &__phone {
+      /* @include Form_Input; */
+    }
+
+    &__email {
+      /* @include Form_Input; */
+    }
+
+    &__password {
+      /* @include Form_Input; */
+    }
+
+    &__submit {
+      background-color: #3ccace;
+      color: #ffffff;
+      width: 306px;
+      height: 40px;
+      border: none;
+      margin-top: 48px;
+      cursor: pointer;
+      display: block;
+    }
+  }
+}

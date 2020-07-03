@@ -1,0 +1,60 @@
+.product__detail__main
+  .product__detail__box
+    .product__detail__box__name k
+    .product__image
+      %img{ src: "/assets/product-detail1.jpg", class:"product__image__1" }
+    .product__image--small
+      %ul.product__image--small__list
+        %li.product__image--small__list__1
+          %img{ src: "/assets/product-detail2.jpg", class:"product__image__2" }
+          %img{ src: "/assets/product-detail3.jpg", class:"product__image__3" }
+    .product__detail__box__price
+      .product__detail__box__price__number $1000
+      .product__detail__box__price__explanation （税込）送料込み
+    .product__detail__box--small k
+    %table.product__detail__table
+      %tr
+        %th 出品者
+        %td フリーザ
+      %tr
+        %th カテゴリー
+        %td 飯
+      %tr
+        %th ブランド
+        %td 
+      %tr
+        %th 商品のサイズ
+        %td 
+      %tr 
+        %th 商品の状態
+        %td 新品/未使用
+      %tr
+        %th 配送料の負担
+        %td 送料込み（出品者負担）
+      %tr
+        %th 発送元の地域
+        %td 北海道
+      %tr
+        %th 発送日の目安
+        %td １~2で発送
+    .option__zone
+      .favorite__btn
+        = button_tag "お気に入り❤︎"
+      .alert__btn
+        = link_to "不適切な商品の通報" 
+  .product__comment__box
+    %textarea{ cols: 100, rows: 8 }
+    .product__comment__box__alert 
+      相手のことを考え丁寧なコメントを心がけましょう。
+      %br不快な言葉遣いなど利用制限や退会処分となることがあります。
+    .product__comment__box__submit__parent
+      %button{ type: "submit", class: 'product__comment__box__submit' }
+        コメントする
+  .choose__option
+    .choose__option__former
+      = link_to "< 前の商品"
+    .choose__option__later
+      = link_to "後ろの商品 >"
+  .other__option
+    同じカテゴリーの商品をもっと見る
+
