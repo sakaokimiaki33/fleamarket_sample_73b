@@ -1,0 +1,159 @@
+$basic-color:rgb(93, 250, 255);
+$font-color:white;
+
+@mixin list() {
+  width:150px;
+  height: 150px;
+  background-color: $basic-color;
+  border-radius: 5px;
+  position: fixed;
+  right:50px;
+  z-index: 500;
+}
+
+@mixin list_p() {
+  color: $font-color;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 80px;
+}
+
+.header{
+  height: auto;
+  width: 100%;
+  &__inner{
+    padding: 30px 40px;
+    justify-content: space-between;
+    display: flex;
+    &__image{
+      width: 15px;
+      height: 15px;
+    }
+    &__search{
+      width: 87%;
+      form{
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 0;
+      }
+      .input{
+        height: 20px;
+        width: 87%;
+        padding: 5px;
+        font-size: 16px;
+      }
+      .submit{
+        height: 35px;
+        width: 35px;
+        background-color: #3CCACE;
+        outline: none;
+        cursor: pointer;
+        img{
+          color: $font-color;
+          font-size: 14px;
+          height: 19px;
+          width: 19px;
+        }
+      }
+    }
+  }
+  &__lists{
+    display: flex;
+    justify-content: space-between;
+    .list{
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+    }
+    a{
+      margin: 0  0 10px 10px;
+      font-size: 14px;
+      padding: 0 0 0 10px;
+    }
+  }
+}
+
+.part_download{
+  height: 400px;
+  width: 100%;
+  background-image: image-url("material/pict/bg-appBanner-pict.jpg");
+  background-size: cover;
+  position: relative;
+  .font_size{
+    font-size: 22px;
+    padding: 120px 0 20px;
+  }
+  p{
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 5px rgb(51, 51, 51);
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .margin_bottom{
+    margin-bottom: 70px;
+  }
+  .list{
+    position: absolute;
+    bottom: 30%;
+    left: 35%;
+  }
+}
+
+.footer{
+  height: 340px;
+  width: 100%;
+  background-color: rgb(32, 32, 32);
+  position: relative;
+  &__menus{
+    display: flex;
+    justify-content: center;
+    &__menu{
+      margin: 40px 30px 20px;
+      h1{
+        font-size: 18px;
+        color: $font-color;
+      }
+      ul{
+        margin: 40px 0 20px;
+        li{
+          margin-bottom: 10px;
+          a{
+            color: $font-color;
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+  &__logo{
+    display: flex;
+    justify-content: center;
+  }
+  p{
+    color: $font-color;
+    padding-top: 3px;
+    justify-content: center;
+    display: flex;
+    font-size: 14px;
+  }
+}
+
+.sell{
+  width:100px;
+  height: 100px;
+  background-color: $basic-color;
+  border-radius: 5px;
+  position: fixed;
+  right:50px;
+  z-index: 500;
+  bottom:  50px;
+  p{
+    color:      $font-color;
+    font-size:  16px;
+    margin: 10px 0 0 15px;
+  }
+  img{
+    margin: 10px 0 0 24px;
+  }
+}

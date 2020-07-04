@@ -1,0 +1,64 @@
+.buy{
+  background-color:rgb(200,200,200);
+  .buyinfo{
+    display: block;
+    width: 70%;
+    height: 100%;
+    margin: 0px auto;
+    background-color: rgb(255,255,255);
+    .buyinfo__content{
+      width: 70%;
+      height: 80%;
+      margin: 0px auto;
+      border-width: 0;
+      &__title{
+        padding: 16px;
+        font-size: 22px;
+        line-height:1.5;
+        text-align: center;
+        border-style:solid;
+        border-width: 0;
+        font-weight: bold;
+      }
+      &__item{
+        padding: 24px 12.5% 0;
+        border-top: 1px solid #f5f5f5;
+        &__inner{
+          max-width: 320px;
+          margin: 0px auto;
+          display: flex;
+          flex-wrap:wrap;
+          h3{
+            font-size:14px;
+            font-weight: bold;
+          }
+          &__name{
+            width: calc(100% - 80px);
+            margin: 0 0 0 16px;
+            text-align: left;
+            font-size: 16px;
+            line-height: 1.5;
+            font-weight: 600;
+          }
+          &__form{
+            width:100%;
+            display: block;
+            text-align: center;
+            background-color: gray;
+            span{
+              margin: 0 0 0 8px;
+              font-size: 14px;
+              font-weight: 400;
+              p{
+                margin: 8px 0 0;
+                line-height: 1.5;
+                font-size: 22px;
+                font-weight: 600;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
