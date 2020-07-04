@@ -1,6 +1,22 @@
+@mixin wrapper {
+  width: 700px;
+  font-size: 16px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  a {text-decoration: none;}
+}
+
+@mixin FURIMA_Logo {
+  width: 140px;
+  margin: 0 auto 50px;
+  display: block;
+}
+
 #wrapper {
+  @include wrapper;
+
   #logo {
-    /* @include FURIMA_Logo; */
+    @include FURIMA_Logo;
   }
 
   #new_regist {
