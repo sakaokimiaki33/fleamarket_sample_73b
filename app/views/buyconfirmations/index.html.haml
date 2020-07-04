@@ -1,59 +1,65 @@
-.buy
-  = render 'renderpage/header'
-  .buyinfo
-    %section.buyinfo__content
-      %h2.buyinfo__content__title 購入内容の確認
-      %section.buyinfo__content__item
-        .buyinfo__content__item--inner
-          %h3.buyinfo__content__item--inner--image
-            = image_tag "material/pict/pict-reason-02.jpg", height: "70", with: "70"
-          %p.buyinfo__content__item__inner__name
-            インナー  4枚セット 黒 グレー
-          .buyinfo__content__form
-            %span.buyinfo__content__free
-              送料込み
-              %p.buyinfo__content__price
-                ¥1000
-              
-            %ul.buyinfo__content__table
-              %li.buyinfo__content__youpay
-                .buyinfo__content__pricecell 支払い金額
-                .buyinfo__content__pricecell
-                  %span.buyinfo__content__datapay
-                    ¥1000
-            %ul.buyinfo__content__accord
-              %li.buyinfo__content__list
-                .buyinfo__content__toggle ポイントはありません
-      %section.buyinfo__content__info{ id: "#" }
-        .buyinfo__content__inner
+
+= render 'renderpage/header'
+
+.buyinfo
+  .buyinfo__content
+    %h2 購入内容の確認
+    .buyinfo__content__item
+      .buyinfo__content__item--images
+        = image_tag "material/pict/pict-reason-02.jpg"
+      .buyinfo__content__item--text
+        %p 
+          インナー  4枚セット 黒 グレー
+        %p.buyinfo__content__item--text__form
+          送料込み
+          %span
+            ¥1000
+    .buyinfo__content__cost
+      .buyinfo__content__cost--price
+        %p 
+          支払い金額
+      .buyinfo__content__cost--pay
+        %span ¥1000
+    .buyinfo__content__info
+      .buyinfo__content__info--cont
+        .buyinfo__content__info--cont--title
           %h3 支払方法
-          %p.buyinfo__content__infotext
-            %br クレジットカード
-            -#以下カード情報を表示
+          .buyinfo__content__info--cont--link 
+            = link_to "#" do
+              %span 
+                変更する  ＞
+              
+        %address.info__content__crejiit
+          %p
+            クレジットカード
+          %p
             ************8091
+          %p
             有効期限 01 / 25
-          %br
-          = link_to "#" do
-            %span 変更する  ＞
-            = icon 'fas', 'chevron-right'
-      %section.buyinfo__content__info
-        .buyinfo__content__inner
+        
+    .buyinfo__content__deliver
+      .buyinfo__content__deliver--inner
+        .buyinfo__content__deliver--inner--top
           %h3 配送先
-          %address.info__content__user
+          .buyinfo__content__deliver--inner--top--link
+            = link_to "#" do
+              %span 
+                変更する  ＞
+              
+        %address.info__content__user
+          %p
             〒601-8468
+          %p
             京都府 京都市区町 123-1 号室
+          %p
             山田  太郎
-            %br
-              = @address_info
-            %br
-              = @full_name
-          = link_to "#" do
-            %span 変更する
-            = icon 'fas', 'chevron-right'
+        
       
-        .buyinfo__content__text
-          %p 
-          郵便局/コンビニ受取をご希望の方は、購入後に取引画面から受取場所を変更をすることが可能です。出品者が発送作業を開始した後は受取場所の変更ができませんので、早めに変更を行ってください。
-          = form_tag("#") do
-            %button.buyinfo__content__btn 購入する
-  = render 'renderpage/footer'
+    .buyinfo__content__const
+      %p 
+        郵便局/コンビニ受取をご希望の方は、購入後に取引画面から受取場所を変更をすることが可能です。出品者が発送作業を開始した後は受取場所の変更ができませんので、早めに変更を行ってください。
+    .buyinfo__content__botan
+      = form_tag("#") do
+        %button.buyinfo__content__const--btn 
+          購入する
+= render 'renderpage/footer'
