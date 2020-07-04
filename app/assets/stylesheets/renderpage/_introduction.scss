@@ -1,5 +1,6 @@
 .introduction {
   padding: 60px 20px;
+  box-sizing: border-box;
   &__title  {
     text-align: center;
     font-size: 26px;
@@ -25,6 +26,23 @@
       &__pic {
         position: relative;
         margin-bottom: 20px;
+        &--num {
+          display: inline-block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          border-radius: 4%;
+          font-size: 30px;
+          text-align: center;
+          margin: 0 5px 0 0;
+          padding: 10px 20px;
+          background-color: #3CCACE;
+          color: #fff;
+        }
+        &--image {
+          width: 100%;
+          vertical-align: bottom;
+        }
       }
       &__text {
         font-weight: bold;
@@ -42,4 +60,8 @@
       }
     }
   }
+}
+
+.last {
+  margin: 16px 0 0;
 }

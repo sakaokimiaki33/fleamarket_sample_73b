@@ -6,5 +6,5 @@ Rails.application.routes.draw do
       get 'index', to: 'buyconfirmations#index'
     end
   end
-  
+  resources :product_detail, only:[:index]
 end

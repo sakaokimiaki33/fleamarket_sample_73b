@@ -2,7 +2,7 @@
   width: calc(700px * 0.75);
 
   #logo {
-    // @include FURIMA_Logo;
+    /* @include FURIMA_Logo; */
     margin-bottom: 32px;
   }
 
@@ -19,7 +19,7 @@
     position: relative;
 
     .form_name {
-      // @include Form_Name;
+      /* @include Form_Name; */
 
       &__small {
         font-size: 0.6rem;
@@ -27,60 +27,60 @@
       }
 
       .required {
-        // @include required;
+        /* @include required; */
       }
     }
 
     &__img {
-      // @include Form_Input;
+      /* @include Form_Input; */
       border: none;
     }
 
     &__family_name {
-      // @include Form_Input;
+      /* @include Form_Input; */
       width: 48%;
       float: left;
     }
 
     &__given_name {
-      // @include Form_Input;
+      /* @include Form_Input; */
       width: 48%;
     }
 
     &__family_name_kana {
-      // @include Form_Input;
+      /* @include Form_Input; */
       width: 48%;
       float: left;
     }
 
     &__name_kana {
-      // @include Form_Input;
+      /* @include Form_Input; */
       width: 48%;
     }
 
     &__nickname {
-      // @include Form_Input;
+      /* @include Form_Input; */
     }
 
     #regist__gender {
-      // @include Form_Input;
+      /* @include Form_Input; */
       border: none;
     }
 
     &__birthday {
-      // @include Form_Input;
+      /* @include Form_Input; */
     }
 
     &__phone {
-      // @include Form_Input;
+      /* @include Form_Input; */
     }
 
     &__email {
-      // @include Form_Input;
+      /* @include Form_Input; */
     }
 
     &__password {
-      // @include Form_Input;
+      /* @include Form_Input; */
     }
 
     &__submit {

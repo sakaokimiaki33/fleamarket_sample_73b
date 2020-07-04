@@ -1,10 +1,10 @@
-.new-items
+.archive.new-items
   %h2.new-items__title
-    ピックアップカテゴリー
+    ピックアップブランド
   .new-items__products
     .new-items__products__head
       %h3.ew-items__products__head__title
-        = link_to "新規投稿商品", "#"
+        = link_to "アーカイバ", "#"
     .new-items__products__lists
       = link_to "/" do
         .new-items__products__lists__list
@@ -15,10 +15,12 @@
               ee
             .new-items__products__lists__list--body__details
               %ul
-                %li
+                %li.new-items__products__lists__list--body__details--cost
                   1000円
                 %li
-                  ★0
+                  ★
+                %li
+                  0
               %p （税込）
       = link_to "/" do
         .new-items__products__lists__list
