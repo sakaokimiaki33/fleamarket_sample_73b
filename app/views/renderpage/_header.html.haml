@@ -1,21 +1,25 @@
 .header
-  .header__inner
-    .header__inner__image
-      = link_to (image_tag "material/logo/logo.png",height:"40",with:"60"),root_path 
-    .header__inner__search 
-      %form 
-        %input.input{type:"text",placeholder: "キーワードで検索"}
-        = button_tag type: 'submit',class:"submit" do
-          = image_tag "material/icon/icon-search1.png"
-  .header__lists 
-    .list 
-      = link_to "#" do
-        カテゴリー
-      = link_to "#" do
-        ブランド
-    .list 
+  .header__search
+    = link_to image_tag('material/logo/logo.png', class: 'logo'), root_path
+    %form.header__search__form
+      %input{type: 'search', class: 'header__search__form__input', placeholder: '検索するキーワードを入力して下さい。'}
+      = button_tag type: 'submit', class: 'header__search__form__submit' do
+        = image_tag 'material/icon/icon-search1.png', class: 'header__search__form__submit--image'
+
+  .header__menu
+    .header__menu__category
+      = link_to root_path do
+        %p カテゴリー
+      = link_to root_path do
+        %p ブランド
+    .header__menu__devise
       - if user_signed_in?
-        = link_to "ログアウト", destroy_user_session_path, method: :delete
+        = link_to edit_user_registration_path do
+          %p 登録情報編集
+        = link_to destroy_user_session_path do
+          %p ログアウト
       - else
-        = link_to "ログイン", new_user_session_path 
-        = link_to "新規会員登録", new_user_registration_path
+        = link_to new_user_session_path do
+          %p ログイン
+        = link_to new_user_registration_path do
+          %p 新規登録
