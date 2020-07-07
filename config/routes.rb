@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'mypage/index'
   root to: 'toppages#index'
 
   resources :buyconfirmations, only: [:index] do
@@ -7,4 +8,5 @@ Rails.application.routes.draw do
     end
   end
   resources :product_detail, only:[:index]
+  resources :mypage, only:[:index]
 end
