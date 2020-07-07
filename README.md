@@ -84,6 +84,18 @@
 has_many :comments, dependent: :destroy
 belong_to :user
 belong_to :category
+has_many :images, dependent: :destroy
+
+
+## imagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|str|string||
+|item_id|integer|null: false, foreign_key: true|
+
+### Association
+mount_uploader :src, ImageUploader
+belongs_to :product
 
 
 ## categoriesテーブル
