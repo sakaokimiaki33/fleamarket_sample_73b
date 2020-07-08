@@ -107,15 +107,19 @@
     
       &--gender {
         @include Form_Input;
+        margin-bottom: 5px;
         border: none;
       }
     
       &--birthday {
         @include Form_Input;
+        margin-bottom: 5px;
+        border: none;
       }
     
       &--phone {
         @include Form_Input;
+        
       }
     
       &--email {
