@@ -1,10 +1,10 @@
-.archive.new-items
+.new-items
   %h2.new-items__title
-    ピックアップブランド
+    ピックアップカテゴリー
   .new-items__products
     .new-items__products__head
       %h3.ew-items__products__head__title
-        = link_to "アーカイバ", "#"
+        = link_to "新規投稿商品", "#"
     .new-items__products__lists
       - @items.each do |item|
         = link_to "/" do
@@ -21,3 +21,17 @@
                   %li 
                     ★0
                 %p （税込）
+            
+      
+     
+      -#     = image_tag p.images.first.image.to_s, width: "200px", height: "200px"
+      -#   .info
+      -#     %p 
+      -#     = p.name 
+      -#     %br/
+      -#     ¥
+      -#     price = p.price*1.1
+      -#         = price.truncate
+      -#         (税込)
+      -#         %i.fas.fa-star
+      -#           0
