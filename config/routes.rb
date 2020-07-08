@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'toppages#index'
+  root to: 'items#index'
+  
 
   resources :buyconfirmations, only: [:index] do
     collection do
