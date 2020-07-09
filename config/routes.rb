@@ -8,4 +8,5 @@ Rails.application.routes.draw do
     end
   end
   resources :product_detail, only:[:index]
+  resources :items
 end
