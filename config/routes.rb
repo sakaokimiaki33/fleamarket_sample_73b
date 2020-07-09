@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'mypage/index'
+  
   root to: 'toppages#index'
 
   resources :buyconfirmations, only: [:index] do
