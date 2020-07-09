@@ -82,3 +82,6 @@ gem 'mini_magick'
 gem 'jquery-rails'
 gem 'fog-aws'
 gem 'ancestry'
+
+gem 'carrierwave'
+gem 'mini_magick'
