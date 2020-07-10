@@ -16,3 +16,5 @@ class CreateItems < ActiveRecord::Migration[5.2]
     end
   end
 end
+
+#カテゴリテーブル作成時にコメントアウト削除
