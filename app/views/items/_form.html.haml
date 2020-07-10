@@ -1,33 +1,33 @@
-= form_for @item do |f|
+= form_with model: @item, local: true do |form|
   商品の画像
-  = f.fields_for :images do |i|
+  = form.fields_for :images do |i|
     = i.file_field :src
     %br/
   商品名
-  = f.text_field :name
+  = form.text_field :name
   %br/
   価格
-  = f.number_field :price
+  = form.number_field :price
   %br/
   商品の説明
-  = f.text_field :product_description
+  = form.text_field :product_description
   %br/
   サイズ
-  = f.text_field :size
+  = form.text_field :size
   %br/
   ブランド
-  = f.text_field :brand
+  = form.text_field :brand
   %br/
   商品の状態
-  = f.text_field :condition
+  = form.text_field :condition
   %br/
   配送料
-  = f.text_field :delivary_charge
+  = form.text_field :delivary_charge
   %br/
   送付元
-  = f.text_field :sender
+  = form.text_field :sender
   %br/
   配送にかかる日数
-  = f.number_field :shipping_date
+  = form.number_field :shipping_date
   %br/
-  = f.submit
+  = form.submit
