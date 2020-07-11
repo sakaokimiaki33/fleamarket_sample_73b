@@ -1,3 +1,5 @@
+= render partial: "renderpage/header"
+
 %label 登録クレジットカード情報
 %br
 = "**** **** **** " + @default_card_information.last4
@@ -8,3 +10,13 @@
 = form_tag(delete_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
   %input{ type: "hidden", name: "card_id", value: "" }
   %button 削除する
+  .back.card_margin
+    = link_to "戻る", root_path
+  .back
+    -# = link_to "マイページへ", user_path(current_user.id)
+  
+  .card_note
+    ※クレジットカード情報は、複数登録できません。
+    別のカードを登録する際は、現在のカード情報を削除して下さい
+
+= render partial: "renderpage/footer"
