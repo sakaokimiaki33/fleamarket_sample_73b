@@ -39,6 +39,18 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'devise'
+    # Flexible authentication solution for Rails with Warden.
+    # Warden を使った Rails向けの柔軟な認証ソリューション
+  gem 'pry-rails'
+    # Use Pry as your rails console.
+    # Pry を Railsコンソールとして使用する。
+  gem 'rspec-rails'
+    # rspec-rails is a testing framework for Rails 5+.
+    # rspec-railsはRails 5+のためのテストフレームワークです。
+  gem 'factory_bot_rails'
+    # factory_bot_rails provides integration between factory_bot and rails 5.0 or newer
+    # factory_bot_rails は factory_bot と rails 5.0 以降の間の統合を提供します。
 end
 
 group :development do
@@ -48,7 +60,6 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'pry-rails'
   gem 'capistrano'
   gem 'capistrano-rbenv'
   gem 'capistrano-bundler'
@@ -70,15 +81,46 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :production do
   gem 'unicorn'
+    # unicorn is an HTTP server for Rack applications designed to only serve fast clients on low-latency, high-bandwidth connections and take advantage of features in Unix/Unix-like kernels.
+    # Unicorn は、低レイテンシ、高帯域幅の接続で高速なクライアントのみにサービスを提供し、Unix/Unixライクなカーネルの機能を利用できるように設計されたラックアプリケーション用の HTTP サーバーです。
+    # Slow clients should only be served by placing a reverse proxy capable of fully buffering both the the request and response in between unicorn and slow clients.
+    # 遅いクライアントは、ユニコーンと遅いクライアントの間に、リクエストとレスポンスの両方を完全にバッファリングできるリバースプロキシを置くことによってのみ、サービスを提供すべきです。
 end
 
-gem 'haml-rails'
-gem 'font-awesome-sass', '~> 5.4.1'
-gem 'font-awesome-rails'
-gem 'devise'
-gem 'pry-rails'
-gem 'carrierwave'
-gem 'mini_magick'
-gem 'jquery-rails'
-gem 'fog-aws'
 gem 'ancestry'
+  # Ancestry allows the records of a ActiveRecord model to be organized in a tree structure, using a single, intuitively formatted database column.
+  # Ancestry では、ActiveRecord モデルのレコードをツリー構造で整理することができ、単一の直感的にフォーマットされたデータベースカラムを使用します。
+  # It exposes all the standard tree structure relations (ancestors, parent, root, children, siblings, descendants) and all of them can be fetched in a single sql query.
+  # これは、すべての標準的な木構造関係（祖先、親、ルート、子、兄弟、子孫）を公開し、それらすべてを単一のSQLクエリで取得することができます。
+  # Additional features are named_scopes, integrity checking, integrity restoration, arrangement of (sub)tree into hashes and different strategies for dealing with orphaned records.
+  # その他の機能としては、named_scopes、完全性チェック、完全性復元、ハッシュへの(サブ)ツリーの配置、孤児となったレコードを扱うための様々な戦略などがあります。
+
+gem 'haml-rails'
+  # Haml-rails provides Haml generators for Rails 4.
+  # Haml-rails は、Rails4 用の Hamlジェネレータを提供します。
+  # It also enables Haml as the templating engine for you, so you don't have to screw around in your own application.rb when your Gemfile already clearly indicated what templating engine you have installed. Hurrah.
+  # また、Hamlをテンプレートエンジンとして使用できるようにしてくれるので、Gemfile にどのテンプレートエンジンがインストールされているかが明記されている場合でも、自分の application.rb をいじくり回す必要がありません。
+
+gem 'jquery-rails'
+  # This gem provides jQuery and the jQuery-ujs driver for your Rails 4+ application.
+  # この Gem は jQuery と Rails4+アプリケーション用の jQuery-ujsドライバを提供します。
+
+gem 'font-awesome-rails'
+  # font-awesome-rails provides the Font-Awesome web fonts and stylesheets as a Rails engine for use with the asset pipeline.
+  # font-awesome-rails は、アセットパイプラインで使用するための Railsエンジンとして、Font-Awesome の Webフォントとスタイルシートを提供しています。
+
+gem 'font-awesome-sass', '~> 5.4.1'
+  # Font-Awesome SASS gem for use in Ruby projects.
+  # Font-Awesome を Rubyプロジェクトで使用するための素晴らしい SASS の Gem
+
+gem 'fog-aws'
+  # This library can be used as a module for `fog` or as standalone provider to use the Amazon Web Services in applications.
+  # このライブラリは `fog` のモジュールとして、あるいはスタンドアロンのプロバイダとして、アプリケーションで Amazon Web Services を利用するために利用することができます。
+
+gem 'mini_magick'
+  # Manipulate images with minimal use of memory via ImageMagick / GraphicsMagick.
+  # ImageMagick / GraphicsMagick を通じて、最小限のメモリ使用で画像を操作することができます。
+
+gem 'carrierwave'
+  # Upload files in your Ruby applications, map them to a range of ORMs, store them on different backends.
+  # Rubyアプリケーション内のファイルをアップロードしたり、様々なORMにマッピングしたり、異なるバックエンドに保存したりすることができます。
