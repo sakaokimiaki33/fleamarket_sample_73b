@@ -7,6 +7,7 @@
   .sidebar {
     width: 25%;
     height: 80vh;
+    overflow: scroll;
     .section {
       margin: 0 auto;
       padding-top: 40px;
@@ -36,7 +37,8 @@
   .main {
     width: 75%;
     height: 80vh;
-    &__box {
+    overflow: scroll;
+    &__contents {
       width: 75%;
       height: 500px;
       margin: 0 auto;
@@ -45,7 +47,7 @@
         text-align: center;
         padding-bottom: 40px;
       }
-      &__lower {
+      &__inner {
         text-align: center;
         line-height: 300px;
         background-color: white;
