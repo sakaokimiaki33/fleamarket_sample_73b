@@ -3,7 +3,7 @@ class PurchaseController < ApplicationController
   require 'payjp'
 
   def index
-    @item = Item.find(params[:format])
+    @item = Item.find(item_params)
     card = Card.where(user_id: current_user.id).first
     #テーブルからpayjpの顧客IDを検索し変数化して取得
     if card.blank?
@@ -30,7 +30,7 @@ class PurchaseController < ApplicationController
   )
   
   @item = Item.find(params[:format])
-  @item.judgment += 1
+  # @item.judgment += 1
   @item.save
   redirect_to action: 'done' #完了画面に移動
   end
