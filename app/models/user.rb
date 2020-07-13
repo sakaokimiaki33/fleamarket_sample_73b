@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  # mount_uploader :user_img, UserImageUploader
+  mount_uploader :user_img, UserImageUploader
   validates :family_name, presence: true
   validates :family_name_kana, presence: true
   validates :name, presence: true
