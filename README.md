@@ -73,10 +73,10 @@
 |product_description|text|null: false|
 |size|string||
 |brand|text||
-|condition|text|null: false|
-|delivary_charge|text|null: false|
-|sender|text|null: false|
-|shipping_date|string|null: false|
+|condition_id|integer|null: false|
+|delivary_charge_id|integer|null: false|
+|sender_id|integer|null: false|
+|shipping_date_id|integer|null: false|
 |user_id|integer|null: false, foreign_key: true|
 |category_id|integer|null: false,foreign_key: true|
 
@@ -86,7 +86,12 @@ belong_to :user
 belong_to :category
 has_many :images, dependent: :destroy
 accepts_nested_attributes_for :images, allow_destroy: true
-belongs_to_active_hash
+extend ActiveHash::Associations::ActiveRecordExtensions
+belongs_to_active_hash :condition
+belongs_to_active_hash :delivary_charge
+belongs_to_active_hash :sender
+belongs_to_active_hash :shipping_date
+
 
 
 ## imagesテーブル
