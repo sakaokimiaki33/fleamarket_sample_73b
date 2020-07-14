@@ -1,15 +1,17 @@
 class ApplicationController < ActionController::Base
   before_action :basic_auth,if: :production?
   before_action :configure_permitted_parameters, if: :devise_controller?
+    # Devise でメールアドレスとパスワード以外の値を受け取る為にストロングパラメータ（ "configure_permitted_parameters" メソッド）を設定する。
   protect_from_forgery with: :exception
 
   protected
-    def configure_permitted_parameters
-      devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :encrypted_password, :family_name, :family_name_kana, :name, :name_kana, :nickname, :birthday])
-    end
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:user_img, :family_name, :family_name_kana, :name, :name_kana, :nickname, :gender, :phone, :birthday, :address_attributes => [:family_name_deliver, :name_deliver, :postal_code, :prefecture, :city, :block, :building]])
+      # Devise の User モデルの新規登録フォームでメールアドレスとパスワード以外で受け取るカラム名を記述する。
+      # ":address_attributes => [:カラム名]" で子モデルで受け取るためのカラム名を記述する。
+  end
 
   private
-
   def production?
     Rails.env.production?
   end
