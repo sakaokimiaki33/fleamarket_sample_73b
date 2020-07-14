@@ -10,7 +10,7 @@
   = form.number_field :price
   %br/
   商品の説明
-  = form.collection_select :product_description_id, ProductDescription.all, :id, :name
+  = form.text_field :product_description
   %br/
   サイズ
   = form.text_field :size
@@ -19,15 +19,15 @@
   = form.text_field :brand
   %br/
   商品の状態
-  = form.text_field :condition
+  = form.collection_select :condition_id, Condition.all, :id, :name
   %br/
   配送料
-  = form.text_field :delivary_charge
+  = form.collection_select :delivary_charge_id, DelivaryCharge.all, :id, :name
   %br/
   送付元
-  = form.text_field :sender
+  = form.collection_select :sender_id, Sender.all, :id, :name
   %br/
   配送にかかる日数
-  = form.number_field :shipping_date
+  = form.collection_select :shipping_date_id, ShippingDate.all, :id, :name
   %br/
   = form.submit
