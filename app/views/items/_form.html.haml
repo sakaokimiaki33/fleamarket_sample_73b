@@ -10,7 +10,7 @@
   = form.number_field :price
   %br/
   商品の説明
-  = form.text_field :product_description
+  = form.collection_select :product_description_id, ProductDescription.all, :id, :name
   %br/
   サイズ
   = form.text_field :size
