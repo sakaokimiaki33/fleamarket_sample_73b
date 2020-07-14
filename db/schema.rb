@@ -26,10 +26,10 @@ ActiveRecord::Schema.define(version: 2020_07_09_045018) do
     t.text "product_description", null: false
     t.string "size"
     t.text "brand"
-    t.text "condition", null: false
-    t.text "delivary_charge", null: false
-    t.text "sender", null: false
-    t.string "shipping_date", null: false
+    t.integer "condition_id", null: false
+    t.integer "delivary_charge_id", null: false
+    t.integer "sender_id", null: false
+    t.integer "shipping_date_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
