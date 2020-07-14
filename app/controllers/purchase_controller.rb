@@ -3,7 +3,7 @@ class PurchaseController < ApplicationController
   require 'payjp'
 
   def index
-    @item = Item.find(item_params)
+    @item = Item.find(1)
     card = Card.where(user_id: current_user.id).first
     #テーブルからpayjpの顧客IDを検索し変数化して取得
     if card.blank?
