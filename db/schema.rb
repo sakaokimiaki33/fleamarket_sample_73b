@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 2020_07_09_045018) do
     t.integer "delivary_charge_id", null: false
     t.integer "sender_id", null: false
     t.integer "shipping_date_id", null: false
+    t.integer "saler_id"
+    t.integer "buyer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -9,4 +9,6 @@ class Item < ApplicationRecord
   belongs_to_active_hash :delivary_charge
   belongs_to_active_hash :sender
   belongs_to_active_hash :shipping_date
+  belongs_to :saler, class_name: "User"
+  belongs_to :buyer, class_name: "User"
 end

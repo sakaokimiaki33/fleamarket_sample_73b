@@ -22,6 +22,9 @@
 - has_many :items, dependent: :destroy
 - has_many :cards, dependent: :destroy
 - has_one :address, dependent: :destroy
+- has_many :buyed_items, foreign_key: "buyer_id", class_name: "Item"
+- has_many :saling_items, -> { where("buyer_id is NULL") }, foreign_key: "saler_id", class_name: "Item"
+- has_many :sold_items, -> { where("buyer_id is not NULL") }, foreign_key: "saler_id", class_name: "Item"
 
 
 ## cardsテーブル
@@ -78,7 +81,9 @@
 |sender_id|integer|null: false|
 |shipping_date_id|integer|null: false|
 |user_id|integer|null: false, foreign_key: true|
-|category_id|integer|null: false,foreign_key: true|
+|category_id|integer|null: false, foreign_key: true|
+|saler_id|integer||
+|buyer_id|integer||
 
 ### Association
 has_many :comments, dependent: :destroy
@@ -91,6 +96,8 @@ belongs_to_active_hash :condition
 belongs_to_active_hash :delivary_charge
 belongs_to_active_hash :sender
 belongs_to_active_hash :shipping_date
+belongs_to :saler, class_name: "User"
+belongs_to :buyer, class_name: "User"
 
 
 
