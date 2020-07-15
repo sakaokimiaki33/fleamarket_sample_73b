@@ -224,4 +224,4 @@ attributes:
     birthday(2i): "誕生日（月）"
     birthday(3i): "誕生日（日）"
 
-site_title: "FURIMA"
+  site_title: "FURIMA"
