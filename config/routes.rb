@@ -32,12 +32,6 @@ Rails.application.routes.draw do
   end
   
 
-  # resources :buyconfirmations, only: [:index] do
-  #   collection do
-  #     get 'index', to: 'buyconfirmations#index'
-  #     post 'pay', to: 'buyconfirmations#pay'
-  #   end
-  # end
   resources :product_detail, only:[:index]
   resources :mypage, only:[:index, :new]
 end
