@@ -3,7 +3,7 @@ class PurchaseController < ApplicationController
   require 'payjp'
 
   def index
-    @item = Item.find(1)
+    @item = Item.find(2)
     card = Card.where(user_id: current_user.id).first
     #テーブルからpayjpの顧客IDを検索し変数化して取得
     if card.blank?
@@ -19,7 +19,7 @@ class PurchaseController < ApplicationController
   end
 
   def pay
-    @item = Item.find(params[:format])
+    @item = Item.find(2)
     price = @item.price*1.1
     card = Card.where(user_id: current_user.id).first
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
@@ -29,7 +29,7 @@ class PurchaseController < ApplicationController
     :currency => 'jpy', #日本円
   )
   
-  @item = Item.find(params[:format])
+  @item = Item.find(2)
   # @item.judgment += 1
   @item.save
   redirect_to action: 'done' #完了画面に移動
