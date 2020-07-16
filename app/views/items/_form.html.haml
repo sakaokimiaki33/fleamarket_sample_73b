@@ -1,3 +1,9 @@
+- if @item.errors.any?
+  %div
+    %ul{style: "color: red"}
+      - @item.errors.full_messages.each do |message|
+        %li= message
+
 = form_with model: @item, local: true do |form|
   商品の画像
   = form.fields_for :images do |i|

@@ -1,0 +1,13 @@
+ja:
+  activerecord:
+    models:
+      item:           #model名
+    attributes:
+      item:           #model名
+        name: 商品名 #カラム名
+        price: 価格
+        product_description: 商品の説明
+        condition_id: 商品の状態
+        delivary_charge_id: 配送料
+        sender_id: 送付元
+        shipping_date_id: 発送にかかる日数

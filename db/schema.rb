@@ -21,15 +21,15 @@ ActiveRecord::Schema.define(version: 2020_07_09_045018) do
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.integer "price", null: false
-    t.text "product_description", null: false
+    t.string "name"
+    t.integer "price"
+    t.text "product_description"
     t.string "size"
     t.text "brand"
-    t.integer "condition_id", null: false
-    t.integer "delivary_charge_id", null: false
-    t.integer "sender_id", null: false
-    t.integer "shipping_date_id", null: false
+    t.integer "condition_id"
+    t.integer "delivary_charge_id"
+    t.integer "sender_id"
+    t.integer "shipping_date_id"
     t.integer "saler_id"
     t.integer "buyer_id"
     t.datetime "created_at", null: false
