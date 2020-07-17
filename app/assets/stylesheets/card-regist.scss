@@ -1,0 +1,42 @@
+.main {
+  width: 75%;
+  height: 80vh;
+  overflow: scroll;
+}
+  .card-form {
+    height: 300px;
+    width: 75%;
+    background-color: white;
+    margin: 0 auto;
+    font-size: 20px;
+    &__group {
+      height: 200px;
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      
+      span {
+        border: red solid 1px;
+        color: white;
+        background-color: red;
+        border-radius: 2px;
+        text-align: center;
+        font-size: 12px;
+        padding: 2px;
+      }  
+      
+    
+    }
+    &__btn {
+      text-align: center;
+      line-height: 50px;
+      border: red solid 1px;
+      color: white;
+      background-color: red;
+      border-radius: 4px;
+      width: 200px;
+      height: 50px;
+      margin: 0 auto;
+    }
+  }
