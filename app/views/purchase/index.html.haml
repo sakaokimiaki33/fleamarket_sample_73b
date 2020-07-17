@@ -22,7 +22,8 @@
     %h2 購入内容の確認
     .buyinfo__content__item
       .buyinfo__content__item--images
-        = image_tag "material/pict/pict-reason-02.jpg"
+        -# = image_tag "material/pict/pict-reason-02.jpg"
+        %img{:src => "#{@item.image}"}
       .buyinfo__content__item--text
         %p 
         = @item.name
