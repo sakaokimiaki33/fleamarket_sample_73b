@@ -6,6 +6,7 @@ class PurchaseController < ApplicationController
     @item = Item.find(2)
     @item.image = "#{@item.id}.jpg"
     image = params[:image]
+    @address = Address.find(2)
     card = Card.where(user_id: current_user.id).first
     #テーブルからpayjpの顧客IDを検索し変数化して取得
     if card.blank?

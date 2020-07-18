@@ -7,6 +7,7 @@ class ItemsController < ApplicationController
 
   def show
     @items = Item.find(params[:id])
+    @tax_in_price = @products.price * 1.1
   end
 
   def item_params
