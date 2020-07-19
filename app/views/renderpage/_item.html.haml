@@ -21,4 +21,8 @@
                   %li 
                     ★0
                 %p （税込）
+          -if item.buyer.present? 
+            .new-items__products__lists__list--pic--sold
+              .new-items__products__lists__list--pic--sold--inner
+                SOLD
 

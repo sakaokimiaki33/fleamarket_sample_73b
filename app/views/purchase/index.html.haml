@@ -22,7 +22,9 @@
           支払い金額
       .buyinfo__content__cost--pay
         %span
-          = @item.price
+          - price = @item.price*1.1
+          = price.truncate
+          円(税込み)
     .buyinfo__content__info
       .buyinfo__content__info--cont
         .buyinfo__content__info--cont--title
@@ -46,7 +48,7 @@
         .buyinfo__content__deliver--inner--top
           %h3 配送先
           .buyinfo__content__deliver--inner--top--link
-            = link_to "#" do
+            = link_to "edit_user_path" do
               %span 
                 変更する  ＞
               
@@ -54,9 +56,9 @@
           %p
             = @address.postal_code
           %p
-            = @address
+            = "#{@address.prefecture} #{@address.city} #{@address.block} #{@address.building}"
           %p
-            = @address
+            = "#{@address.family_name_deliver} #{@address.name_deliver}"
         
       
     .buyinfo__content__const

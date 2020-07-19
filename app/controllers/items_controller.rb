@@ -23,8 +23,11 @@ class ItemsController < ApplicationController
       :shipping_date,
       :images_id,
       :category_id,
+      :buyer,
     ).merge(
       user_id: current_user.id, 
+      # saler:current_user.id,
+      # buyer:current_user.id
     )
   end
 end

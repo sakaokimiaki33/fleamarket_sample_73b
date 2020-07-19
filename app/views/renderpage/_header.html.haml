@@ -15,7 +15,7 @@
     .header__menu__devise
       - if user_signed_in?
         = link_to mypage_index_path do
-          %p 登録情報編集
+          %p マイページ
         = link_to destroy_user_session_path, method: :delete do
           %p ログアウト
       - else
