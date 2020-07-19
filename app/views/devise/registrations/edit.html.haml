@@ -1,36 +1,129 @@
-%h2
-  Edit #{resource_name.to_s.humanize}
-= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-    %div
-      Currently waiting confirmation for: #{resource.unconfirmed_email}
-  .field
-    = f.label :password
-    %i (leave blank if you don't want to change it)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-    - if @minimum_password_length
-      %br/
-      %em
-        = @minimum_password_length
-        characters minimum
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .field
-    = f.label :current_password
-    %i (we need your current password to confirm your changes)
-    %br/
-    = f.password_field :current_password, autocomplete: "current-password"
-  .actions
-    = f.submit "Update"
-%h3 Cancel my account
-%p
-  Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
-= link_to "Back", :back
+= render partial: "renderpage/header"
+.mypage
+  = render partial: "mypage/sidebar"
+  
+  .main
+    .edit
+      = form_for(resource, as: resource_name, url: registration_path(resource_name),html: { method: :put }) do |form|
+        .edit__regist-form
+          .edit__regist-form__profile
+            %h2 【プロフィール情報変更】
+  
+            %p.edit__regist-form__profile--input プロフィール画像
+            =form.file_field :user_img, class: 'edit__regist-form__profile--img'
+
+            %p.edit__regist-form__profile--input
+              ニックネーム
+            = form.text_field :nickname, class: 'edit__regist-form__profile--nickname', placeholder: 'ニックネーム'
+
+            %p.edit__regist-form__profile--input
+              メールアドレス
+            = form.email_field :email, class: 'edit__regist-form__profile--email', placeholder: 'メールアドレス'
+
+            %p.edit__regist-form__profile--input
+              新しいパスワード
+            %p.edit__regist-form__profile--input
+              ※パスワードを変更する場合のみ入力
+            = form.password_field :password, class: 'edit__regist-form__profile--password', placeholder: 'パスワード'
+            
+
+            %p.edit__regist-form__profile--input
+              新しいパスワード
+            %p.edit__regist-form__profile--input
+              ※パスワードを変更する場合のみ入力
+            %span.edit__regist-form__profile--font-small （確認用）
+            = form.password_field :password_confirmation, class: 'edit__regist-form__profile--password', placeholder: 'パスワード（確認用）'
+            
+
+            %p.edit__regist-form__profile--input
+              ご本人確認のため、現在のパスワードを入力してください
+            %span.edit__regist-form__profile--font-small 
+            = form.password_field :current_password, class: 'edit__regist-form__profile--password',placeholder: 'パスワード', autocomplete: "current-password"            
+
+          .edit__regist-form__address
+            %h2 【配送先情報変更】
+
+            = form.fields_for :address, @user.build_address do |form_address|
+              %p.edit__regist-form__address__input
+                氏名
+                %span.edit__regist-form__address--font-small (全角)
+              =form.text_field :family_name, class: 'edit__regist-form__address--family_name', placeholder: '姓', autocomplete: "family-name"
+              = form.text_field :name, class: 'edit__regist-form__address--given_name', placeholder: '名', autocomplete: "given-name"
+
+              %p.edit__regist-form__address__input
+                氏名
+                %span.edit__regist-form__address--font-small (フリガナ・全角)
+              = form.text_field :family_name_kana, class: 'edit__regist-form__address--family_name_kana', placeholder: '姓（カナ）'
+              = form.text_field :name_kana, class: 'edit__regist-form__address--name_kana', placeholder: '名（カナ）'
+          
+              %p.edit__regist-form__address__input
+                郵便番号
+                %span.edit__regist-form__address--font-small（半角）
+              = form_address.number_field :postal_code, class: 'edit__regist-form__address--postal_code'
+
+              %p.edit__regist-form__address__input
+                住所
+                %span.edit__regist-form__address--font-small（都道府県）
+              = form_address.select :prefecture, Address.prefectures.keys, {prompt: '選択してください'}, class: 'edit__regist-form__address--prefecture'
+
+              %p.edit__regist-form__address__input
+                住所
+                %span.edit__regist-form__address--font-small（市区町村）
+              = form_address.text_field :city, class: 'edit__regist-form__address--city',placeholder: '住所（市区町村）',autocomplete: "address-level2"
+
+              %p.edit__regist-form__address__input
+                住所
+              = form_address.text_field :block, class: 'edit__regist-form__address--block', placeholder: '住所',autocomplete: "address-level3"
+
+              %p.edit__regist-form__address__input
+                住所
+                %span.edit__regist-form__address-font-small （マンション名・建物名）
+              = form_address.text_field :building, class: 'edit__regist-form__address--building', placeholder: '住所（マンション名・建物名）'
+
+              %p.edit__regist-form__address__input
+                電話番号  
+              = form.telephone_field :phone, class: 'edit__regist-form__address--phone', placeholder: '電話番号'
+
+        .edit__submit
+          = form.submit "変更する", class: 'edit__submit--btn'
+          
+
+
+
+  -# %h2
+  -#   Edit #{resource_name.to_s.humanize}
+  -# = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+  -#   = render "devise/shared/error_messages", resource: resource
+  -#   .field
+  -#     = f.label :email
+  -#     %br/
+  -#     = f.email_field :email, autofocus: true, autocomplete: "email"
+  -#   - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+  -#     %div
+  -#       Currently waiting confirmation for: #{resource.unconfirmed_email}
+  -#   .field
+  -#     = f.label :password
+  -#     %i (leave blank if you don't want to change it)
+  -#     %br/
+  -#     = f.password_field :password, autocomplete: "new-password"
+  -#     - if @minimum_password_length
+  -#       %br/
+  -#       %em
+  -#         = @minimum_password_length
+  -#         characters minimum
+  -#   .field
+  -#     = f.label :password_confirmation
+  -#     %br/
+  -#     = f.password_field :password_confirmation, autocomplete: "new-password"
+  -#   .field
+  -#     = f.label :current_password
+  -#     %i (we need your current password to confirm your changes)
+  -#     %br/
+  -#     = f.password_field :current_password, autocomplete: "current-password"
+  -#   .actions
+  -#     = f.submit "Update"
+  -# %h3 Cancel my account
+  -# %p
+  -#   Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
+  -# = link_to "Back", :back
+= render partial: "renderpage/footer"

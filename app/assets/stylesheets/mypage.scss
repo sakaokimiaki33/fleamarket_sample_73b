@@ -1,12 +1,12 @@
 .mypage {
   margin: 0 auto;
   width: 100%;
-  height: 80vh;
+  height: 600px;
   display: flex;
   background-color: #f8f8f8;
   .sidebar {
     width: 25%;
-    height: 80vh;
+    height: 600px;
     overflow: scroll;
     .section {
       margin: 0 auto;
@@ -36,7 +36,7 @@
   }
   .main {
     width: 75%;
-    height: 80vh;
+    height: 600px;
     overflow: scroll;
     &__contents {
       width: 75%;
