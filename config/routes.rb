@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :addresses
+  # devise_for :addresses
   devise_for :users
   root to: 'toppages#index'
 
@@ -9,5 +9,5 @@ Rails.application.routes.draw do
     end
   end
   resources :product_detail, only:[:index]
-  resources :mypage, only:[:index, :new]
+  resources :mypage, only:[:index, :new, :edit, :update, :destroy]
 end
