@@ -1,3 +1,6 @@
+
+= render 'renderpage/header'
+
 .product__detail__main
   .product__detail__box
     .product__detail__box__name k
@@ -15,7 +18,7 @@
     %table.product__detail__table
       %tr
         %th 出品者
-        %td フリーザ
+        %td @item.name
       %tr
         %th カテゴリー
         %td 飯
@@ -36,7 +39,7 @@
         %td 北海道
       %tr
         %th 発送日の目安
-        %td １~2で発送
+        %td １~2日で発送
     .option__zone
       .favorite__btn
         = button_tag "お気に入り❤︎"
@@ -57,4 +60,5 @@
       = link_to "後ろの商品 >"
   .other__option
     同じカテゴリーの商品をもっと見る
+= render 'renderpage/footer'
 
