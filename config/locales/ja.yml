@@ -11,7 +11,6 @@ ja:
         delivary_charge_id: 配送料
         sender_id: 送付元
         shipping_date_id: 発送にかかる日数
-        
   activerecord:
     errors:
       messages:
