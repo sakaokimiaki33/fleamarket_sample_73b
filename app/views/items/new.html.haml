@@ -2,74 +2,77 @@
 
 .products
   .products__main
-    .products__header
-    .products__main__box
-      .products__main__image
-        出品画像
-        .products__main__image__side  必須
-      .products__main__image__detail
-        最大10枚目でアップロードできます
-        .products__main__image__btn  
-        = link_to image_tag("material/icon/icon_camera.png", class:"products__main__image__content__btn "), "#"
-    .products__main__box2
-      .products__main__name  
-        商品名
-        .products__main__name__sub  必須
-        .products__main__name__box
-      .products__main__explan
-        商品の説明
-        .products__main__explan__side  必須
-        .products__main__explan__box
-    .products__detail
-      商品の詳細
-    .products__main__box3
-      .products__detail__category
-        カテゴリー
-        .products__detail__category__side  必須
-        .products__detail__category__box
-      .products__detail__brand
-        ブランド
-        .products__detail__brand__side  任意
-        .products__detail__brand__box
-      .products__detail__status 
-        商品の状態
-        .products__detail__status__side  必須
-        .products__detail__status__box
-    .products__delivery
-      配送について
-    .products__main__box4
-      .products__delivery__postage
-        配送料の負担
-        .products__delivery__postage__side  必須
-        .products__delivery__postage__box
-      .products__delivery__area
-        発送先の地域
-        .products__delivery__area__side  必須
-        .products__delivery__area__box
-      .products__delivery__day
-        発送までの日数
-        .products__delivery__day__side  必須
-        .products__delivery__day__box
-    .products__price
-      価格 (300~9,999,999)
-    .products__main__box5
-      .products__price2
-        販売価格
-        .products__price2__side  必須
-        .products__price2__mark  ￥
-        .products__price2__box
-      .products__price__fee
-        販売手数料 (10%)
-      .products__price__profit
-        販売利益
-    .products__main__box6
-      .products__sell
-        = link_to "#", class: "products__sell__contents__btn--syutten" do
-          出品する
-      .products__draft
-        = link_to "#", class: "products__sell__contents__btn--save" do
-          下書きに保存する
-      .products__back
-        = link_to "#", class: "products__sell__contents__btn--back" do
-          もどる
-= render 'renderpage/footer'
+    = form_with model: @item, local: true do |form|
+      .products__main__box
+        .products__main__image
+          出品画像
+          .products__main__image__side  必須
+        .products__main__image__detail
+          最大10枚までアップロードできます
+        = form.fields_for :images do |i|
+          = i.file_field :src            
+      .products__main__box2
+        .products__main__name
+          商品名
+          .products__main__name__sub  必須
+          = form.text_field :name, class: 'products__main__name__box'
+        .products__main__name
+          商品の説明
+          .products__main__name__sub  必須
+          = form.text_field :product_description, class: 'products__main__name__box'
+      .products__detail
+        商品の詳細
+      .products__main__box3
+        .products__detail__category
+          カテゴリー
+          .products__main__name__sub  必須
+          .products__detail__category__box
+        .products__main__name
+          ブランド
+          .products__detail__brand__side  任意
+          = form.text_field :brand, class: 'products__main__name__box'
+        .products__main__name
+          サイズ
+          .products__detail__brand__side  任意
+          = form.text_field :size, class: 'products__main__name__box'
+        .products__main__name
+          商品の状態
+          .products__main__name__sub  必須
+          = form.collection_select :condition_id, Condition.all, :id, :name, class: 'products__detail__status__box'
+      .products__delivery
+        配送について
+      .products__main__box4
+        .products__main__name
+          配送料の負担
+          .products__main__name__sub  必須
+          = form.collection_select :delivary_charge_id, DelivaryCharge.all, :id, :name, class: 'products__delivery__postage__box'
+        .products__main__name
+          発送先の地域
+          .products__main__name__sub  必須
+          = form.collection_select :sender_id, Sender.all, :id, :name, class: 'products__delivery__area__box'
+        .products__main__name
+          発送までの日数
+          .products__main__name__sub  必須
+          = form.collection_select :shipping_date_id, ShippingDate.all, :id, :name, class: 'products__delivery__day__box'
+      .products__price
+        価格
+      .products__main__box5
+        .products__main__name
+          販売価格
+          .products__price2__side  必須
+          .products__price2__mark  ￥
+          = form.number_field :price, class: 'products__price2__box'
+        .products__price__fee
+          販売手数料 (10%)
+        .products__price__profit
+          販売利益
+      .products__main__box6
+        .products__sell
+          = form.submit "出品する", class: 'products__sell__contents__btn--syutten'
+        .products__draft
+          = link_to "#", class: "products__sell__contents__btn--save" do
+            下書きに保存する
+        .products__back
+          = link_to "#", class: "products__sell__contents__btn--back" do
+            もどる
+  = render 'renderpage/footer'
