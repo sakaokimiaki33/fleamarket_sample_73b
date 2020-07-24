@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   end
   resources :product_detail, only:[:index]
   resources :items, except: :show
+  resources :products,only:[:index, :new]
   resources :mypage, only:[:index, :new]
 end
