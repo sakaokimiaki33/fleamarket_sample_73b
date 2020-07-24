@@ -8,21 +8,36 @@
     .new-items__products__lists
       - @items.each do |item|
         = link_to "/" do
-          .new-items__products__lists__list
-            .new-items__products__lists__list--pic
-              = image_tag item.image.to_s
-            .new-items__products__lists__list--body
-              %h3.new-items__products__lists__list--body__title
-                %p= item.name
-              .new-items__products__lists__list--body__details
-                %ul
-                  %li 
-                    = item.price 
-                  %li 
-                    ★0
-                %p （税込）
-          -if item.buyer.present? 
-            .new-items__products__lists__list--pic--sold
-              .new-items__products__lists__list--pic--sold--inner
-                SOLD
+          -if item.buyer == nil
+            .new-items__products__lists__list
+              .new-items__products__lists__list--pic
+                = image_tag item.image.to_s
+              .new-items__products__lists__list--body
+                %h3.new-items__products__lists__list--body__title
+                  %p= item.name
+                .new-items__products__lists__list--body__details
+                  %ul
+                    %li 
+                      = item.price 
+                    %li 
+                      ★0
+                  %p （税込）
+          -else
+            .new-items__products__lists__list
+              .new-items__products__lists__list--pic
+                = image_tag item.image.to_s
+                .new-items__products__lists__list--pic--sold
+                  .new-items__products__lists__list--pic--sold--inner
+                    SOLD
+              .new-items__products__lists__list--body
+                %h3.new-items__products__lists__list--body__title
+                  %p= item.name
+                .new-items__products__lists__list--body__details
+                  %ul
+                    %li 
+                      = item.price 
+                    %li 
+                      ★0
+                  %p （税込）
+                
 
