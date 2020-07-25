@@ -3,7 +3,8 @@
 
 .product__detail__main
   .product__detail__box
-    .product__detail__box__name k
+    .product__detail__box__name 
+      = @item.name
     .product__image
       %img{ src: "/assets/product-detail1.jpg", class:"product__image__1" }
     .product__image--small
@@ -12,34 +13,43 @@
           %img{ src: "/assets/product-detail2.jpg", class:"product__image__2" }
           %img{ src: "/assets/product-detail3.jpg", class:"product__image__3" }
     .product__detail__box__price
-      .product__detail__box__price__number $1000
+      .product__detail__box__price__number 
+        = @item.price
       .product__detail__box__price__explanation （税込）送料込み
-    .product__detail__box--small k
+    .product__detail__box--small 
+      = @item.name
     %table.product__detail__table
       %tr
         %th 出品者
-        %td @item.name
+        %td 
+          = @item.name
       %tr
         %th カテゴリー
-        %td 飯
+        %td 
       %tr
         %th ブランド
         %td 
+          = @item.brand
       %tr
         %th 商品のサイズ
         %td 
+          = @item.size
       %tr 
         %th 商品の状態
-        %td 新品/未使用
+        %td 
+          = @item.condition
       %tr
         %th 配送料の負担
-        %td 送料込み（出品者負担）
+        %td 
+          = @item.delivary_charge
       %tr
         %th 発送元の地域
-        %td 北海道
+        %td 
+          = @item.sender
       %tr
         %th 発送日の目安
-        %td １~2日で発送
+        %td 
+          = @item.shipping_date
     .option__zone
       .favorite__btn
         = button_tag "お気に入り❤︎"

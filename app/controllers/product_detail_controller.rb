@@ -1,5 +1,5 @@
 class ProductDetailController < ApplicationController
   def index
-    @items = Item.find(params[:id])
+    @item = Item.find(1)
   end
 end
