@@ -13,56 +13,43 @@
 
 .mypage {
   background-color: #f8f8f8;
-  // background-size: cover;
   width: 100%;
   height: 800px;
-  // overflow: scroll;
   .main {
     width:  75%;
     height: 800px;
-
     .edit {
-      
       width: 75%;
       margin: 0 auto;
-
       &__regist-form {
         display: flex;
         flex-direction: row;
-
         &__profile {
           width: 340px;
           padding: 0px 0 0px 10px;
-
           h2 {
             font-size: 1.0rem;
             font-weight: bold;
             text-align: center;
             margin: 1.5em;
           }
-
           &--input {
             @include Form_Name;
           }
-
           &--font-small {
             font-size: 0.6rem;
             font-weight: normal;
           }
-
           &--img {
             @include Form_Input;
             border: none;
           }
-        
           &--nickname {
             @include Form_Input;
           }
-        
           &--email {
             @include Form_Input;
           }
-        
           &--password {
             @include Form_Input;
           }
@@ -71,68 +58,55 @@
         &__address {
           width: 320px;
           padding: 0px 0 0px 30px;
-
           h2 {
             font-size: 1.0rem;
             font-weight: bold;
             text-align: center;
             margin: 1.5em;
           }
-
           &__input {
             font-size: 0.8rem;
             @include Form_Name;
           }
-      
           &--font-small {
             font-size: 0.6rem;
             font-weight: normal;
           }
-
           &--family_name {
             @include Form_Input;
             width: 150px;
             float: left;
           }
-      
           &--given_name {
             @include Form_Input;
             width: 150px;
             float: left;
           }
-
           &--family_name_kana {
             @include Form_Input;
             width: 150px;
             float: left;
           }
-
           &--name_kana {
             @include Form_Input;
             width: 150px;
             float: left;
           }
-      
           &--postal_code {
             @include Form_Input;
           }
-      
           &--prefecture {
             @include Form_Input;
           }
-      
           &--city {
             @include Form_Input;
           }
-      
           &--block {
             @include Form_Input;
           }
-      
           &--building {
             @include Form_Input;
           }
-
           &--phone {
             @include Form_Input;
           }
@@ -149,16 +123,9 @@
           margin:10px 0 0 10px;
           cursor: pointer;
           display: block;
-        &--back {
-          background-color: #3ccace;
-          color: #ffffff;
-          width: 670px;
-          height: 40px;
-          border: none;
-          margin:10px 0 0 10px;
-          cursor: pointer;
-          display: block;
         }
+        &--btn:hover {
+          background-color: #88d9dbe5;
         }
       }
     }

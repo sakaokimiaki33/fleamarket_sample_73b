@@ -1,42 +1,106 @@
 .main {
   width: 75%;
-  height: 80vh;
-  overflow: scroll;
-}
-  .card-form {
-    height: 300px;
-    width: 75%;
+  height: 800px;
+  .card_regist-form {
+    width: 60%;
+    height: 500px;
+    margin: 50px auto ;
+    border: 1px solid lightgray;
     background-color: white;
-    margin: 0 auto;
-    font-size: 20px;
-    &__group {
-      height: 200px;
-      width: 300px;
-      display: flex;
-      flex-direction: column;
-      padding: 20px;
-      
-      span {
-        border: red solid 1px;
-        color: white;
-        background-color: red;
-        border-radius: 2px;
-        text-align: center;
-        font-size: 12px;
-        padding: 2px;
-      }  
-      
-    
+    h2 {
+      font-size: 1.5em;
+      font-weight: bold;
+      text-align: center;
+      margin: 1.5em;
     }
-    &__btn {
+    &__box {
+      width: 100%;
+      height: 100%;
+      margin-left: 80px;
+      &__user-input {
+        font-weight: bold;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        span {
+          border: red solid 1px;
+          color: white;
+          background-color: red;
+          border-radius: 2px;
+          text-align: center;
+          font-size: 12px;
+          padding: 2px;
+        }  
+      }
+      &__image {
+        &__img {
+          margin-top: 10px;
+          width: 40px;
+          height: 30px;
+        }
+      }
+    
+    .number, .cvc{
+      width: 300px;
+      height: 30px;
+    }
+    select {
+      width: 60px;
+      height: 30px;
+    }
+    
+    #token_submit {
       text-align: center;
       line-height: 50px;
       border: red solid 1px;
       color: white;
       background-color: red;
       border-radius: 4px;
-      width: 200px;
+      width: 300px;
       height: 50px;
-      margin: 0 auto;
+      margin: 20px auto;
     }
-  }
+    #token_submit:hover {
+      background-color: rgba(240, 126, 126, 0.897);
+    }
+    }
+  }  
+}
+
+//   .card-form {
+//     height: 300px;
+//     width: 75%;
+//     background-color: white;
+//     margin: 0 auto;
+//     font-size: 20px;
+//     &__group {
+//       height: 200px;
+//       width: 300px;
+//       display: flex;
+//       flex-direction: column;
+//       padding: 20px;
+      
+//       span {
+//         border: red solid 1px;
+//         color: white;
+//         background-color: red;
+//         border-radius: 2px;
+//         text-align: center;
+//         font-size: 12px;
+//         padding: 2px;
+//       }  
+      
+    
+//     }
+//     &__btn {
+//       text-align: center;
+//       line-height: 50px;
+//       border: red solid 1px;
+//       color: white;
+//       background-color: red;
+//       border-radius: 4px;
+//       width: 200px;
+//       height: 50px;
+//       margin: 0 auto;
+//     }
+//   }
+// }
