@@ -1,0 +1,28 @@
+.new-items
+  %h2.new-items__title
+    ピックアップカテゴリー
+  .new-items__products
+    .new-items__products__head
+      %h3.ew-items__products__head__title
+        = link_to "新規投稿商品", "#"
+    .new-items__products__lists
+      - @items.each do |item|
+        = link_to "/" do
+          .new-items__products__lists__list
+            .new-items__products__lists__list--pic
+              = image_tag item.image.to_s
+            .new-items__products__lists__list--body
+              %h3.new-items__products__lists__list--body__title
+                %p= item.name
+              .new-items__products__lists__list--body__details
+                %ul
+                  %li 
+                    = item.price 
+                  %li 
+                    ★0
+                %p （税込）
+          -if item.buyer.present? 
+            .new-items__products__lists__list--pic--sold
+              .new-items__products__lists__list--pic--sold--inner
+                SOLD
+
