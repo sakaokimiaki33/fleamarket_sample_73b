@@ -9,8 +9,12 @@
           .products__main__image__side  必須
         .products__main__image__detail
           最大10枚までアップロードできます
-        = form.fields_for :images do |i|
-          = i.file_field :src            
+        #image-box
+          = form.fields_for :images do |image|
+            .js-file_group{"data-index" => "#{image.index}"}
+              = image.file_field :src, class: 'js-file'
+              %br/
+              %span.js-remove 削除      
       .products__main__box2
         .products__main__name
           商品名
