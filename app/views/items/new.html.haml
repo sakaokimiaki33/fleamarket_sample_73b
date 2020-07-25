@@ -8,13 +8,19 @@
           出品画像
           .products__main__image__side  必須
         .products__main__image__detail
-          最大10枚までアップロードできます
-        #image-box
-          = form.fields_for :images do |image|
-            .js-file_group{"data-index" => "#{image.index}"}
-              = image.file_field :src, class: 'js-file'
-              %br/
-              %span.js-remove 削除      
+          最大5枚までアップロードできます
+        .post__drop__box__container
+          .prev-content
+          .label-content
+            %label{for: "item_images_attributes_0_image", class: "label-box", id: "label-box--0"}
+              %pre.label-box__text-visible クリックしてファイルをアップロード
+          .hidden-content
+            = form.fields_for :images do |i|
+              = i.file_field :image, class: "hidden-field"
+              %input{class:"hidden-field", type: "file", name: "item[images_attributes][1][image]", id: "item_images_attributes_1_image" }
+              %input{class:"hidden-field", type: "file", name: "item[images_attributes][2][image]", id: "item_images_attributes_2_image" }
+              %input{class:"hidden-field", type: "file", name: "item[images_attributes][3][image]", id: "item_images_attributes_3_image" }
+              %input{class:"hidden-field", type: "file", name: "item[images_attributes][4][image]", id: "item_images_attributes_4_image" }
       .products__main__box2
         .products__main__name
           商品名
