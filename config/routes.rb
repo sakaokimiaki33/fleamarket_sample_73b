@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
   devise_for :addresses
-  get 'purchase/index'
-  get 'purchase/done'
-  get 'card/new'
-  get 'card/show'
   devise_for :users
   root to: 'items#index'
   resources :users, only: [:show, :edit, :update, :destroy]
@@ -30,8 +26,8 @@ Rails.application.routes.draw do
       get 'done', to: 'purchase#done'
     end
   end
-  
-
+  resources :card, only: [:new, :show]
+  resources :purchase, only: [:index, :done]
   resources :product_detail, only:[:index]
   resources :products,only:[:index, :new]
   resources :mypage, only:[:index, :new]

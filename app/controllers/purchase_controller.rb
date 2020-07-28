@@ -3,13 +3,11 @@ class PurchaseController < ApplicationController
   require 'payjp'
 
   def index
+    #itemsテーブルから値を直接指定して引っ張ってきている
     @item = Item.find(2)
-    # @item.image = "#{@item.id}.jpg"
-    # @item.image = "public/uploads/item/image/1/food1.jpeg"
     image = params[:image]
     @address = Address.find(2)
     card = Card.where(user_id: current_user.id).first
-    # binding.pry
     #テーブルからpayjpの顧客IDを検索し変数化して取得
     if card.blank?
       #登録された情報がない場合にカード登録画面に移動
@@ -41,9 +39,8 @@ class PurchaseController < ApplicationController
   end
 
   def done
-    # binding.pry
-    @item_buyer= Item.find(params[:id])
-    @item_buyer.update( buyer: current_user.id)
+    @item= Item.find(params[:id])
+    @item.update( buyer: current_user.id)
    end
 
 end
