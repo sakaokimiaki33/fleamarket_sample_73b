@@ -7,7 +7,7 @@ class PurchaseController < ApplicationController
     @item = Item.find(2)
     image = params[:image]
     @address = Address.find(2)
-    card = card.first
+    card = cards.first
     #テーブルからpayjpの顧客IDを検索し変数化して取得
     if card.present?
       #登録された情報がない場合にカード登録画面に移動
@@ -24,7 +24,7 @@ class PurchaseController < ApplicationController
   def pay
     @item = Item.find(2)
     price = @item.price*1.1
-    card = card.first
+    card = cards.first
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     Payjp::Charge.create(
     :amount => price.truncate, #支払金額を入力（itemテーブル等に紐づけるべき?）
@@ -46,7 +46,7 @@ class PurchaseController < ApplicationController
   end
 
   def set_cards
-    card = Card.where(user_id: current_user.id)
+    cards = Card.where(user_id: current_user.id)
   end
 
 
