@@ -4,7 +4,7 @@ class CardController < ApplicationController
   require "payjp"
 
   def new
-    @card = @set_cards
+    @card = card
     redirect_to action: "show" if card.exists?
   end
 
@@ -27,7 +27,7 @@ class CardController < ApplicationController
   end
 
   def delete #PayjpとCardデータベースを削除します
-    @card = @set_cards.first
+    @card = card.first
     if card.present?
     else
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
@@ -39,8 +39,8 @@ class CardController < ApplicationController
   end
 
   def show #Cardのデータpayjpに送り情報を取り出します
-    @card = @set_cards.first
-    if card.blank?
+    @card = card.first
+    if card.present?
       redirect_to action: "new" 
     else
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]

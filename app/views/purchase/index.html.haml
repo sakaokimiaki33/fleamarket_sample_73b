@@ -68,5 +68,6 @@
       = form_tag(action: :pay, method: :post) do
         %button.buyinfo__content__const--btn 
           購入する
+= render 'layouts/error_messages', model: f.object
 = render 'renderpage/footer'
 
