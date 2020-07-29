@@ -1,7 +1,7 @@
 = render 'renderpage/header'
 
 - if @item.errors.any?
-  %div
+  .error-message
     %ul{style: "color: red"}
       - @item.errors.full_messages.each do |message|
         %li= message
