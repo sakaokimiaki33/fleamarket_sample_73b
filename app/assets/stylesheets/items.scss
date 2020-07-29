@@ -400,6 +400,7 @@
   &__side{
     margin-left: 8px;
     margin-right: auto;
+    margin-top: 25px;
     background-color: red;
     color: white;
     font-size: 16px;
@@ -407,12 +408,12 @@
     border-radius: 2px;
     font-weight: 600;
     line-height: 1.4em;
-    display: inline;
+    height: 20px;
   }
   &__mark{
     font-size: 18px;
     margin-right: 8px;
-    margin-top: 15px;
+    margin-top: 25px;
     display: inline;
   }
   &__box{
@@ -423,8 +424,7 @@
     outline: none;
     padding: 0 16px;
     width: 100px;
-    margin-top: 30px;
-    margin-bottom: 20px;
+    margin-top: 15px;
     display: inline;
     position: relative;
     right: 0%;
@@ -432,6 +432,10 @@
 }
 .products__main__box5{
   padding-bottom: 16px 16px 0px;
+  &__flex {
+    display: flex;
+    justify-content: left;
+  }
 }
 .products__price__fee{
   height: 46px;

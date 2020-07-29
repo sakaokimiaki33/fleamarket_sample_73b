@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
   def index
+    redirect_to '/items/new'
   end
 
   def new
@@ -14,6 +15,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path
     else
+      @item.images.new
       render :new
     end
   end

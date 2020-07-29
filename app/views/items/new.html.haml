@@ -72,10 +72,13 @@
       .products__price
         価格
       .products__main__box5
-        .products__main__name
-          販売価格
-          .products__price2__side  必須
-          .products__price2__mark  ￥
+        .products__main__box5__flex
+          .products__main__name
+            販売価格
+          .products__price2__side
+            必須
+          .products__price2__mark
+            ￥
           = form.number_field :price, class: 'products__price2__box'
       .products__main__box6
         .products__sell
