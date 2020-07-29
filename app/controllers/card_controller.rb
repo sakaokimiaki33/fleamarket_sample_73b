@@ -4,7 +4,7 @@ class CardController < ApplicationController
   require "payjp"
 
   def new
-    @card = card
+    card = cards
     redirect_to action: "show" if card.exists?
   end
 
@@ -17,8 +17,8 @@ class CardController < ApplicationController
       card: params['payjp-token'],
       metadata: {user_id: current_user.id}
       ) 
-      @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
-      if @card.save
+      card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
+      if card.save
         redirect_to action: "show"
       else
         redirect_to action: "pay"
@@ -27,7 +27,7 @@ class CardController < ApplicationController
   end
 
   def delete #PayjpとCardデータベースを削除します
-    @card = card.first
+    card = cards.first
     if card.present?
     else
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
@@ -39,7 +39,7 @@ class CardController < ApplicationController
   end
 
   def show #Cardのデータpayjpに送り情報を取り出します
-    @card = card.first
+    card = cards.first
     if card.present?
       redirect_to action: "new" 
     else
@@ -50,7 +50,7 @@ class CardController < ApplicationController
   end
 
   def set_cards
-    card = Card.where(user_id: current_user.id)
+    cards = Card.where(user_id: current_user.id)
   end
 
 end
