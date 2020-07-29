@@ -52,10 +52,6 @@
       line-height: 1.4em;
       padding: 16px;
       align-items: center;
-      display: flex;
-      position: relative;
-      margin-top: 16px;
-      margin-bottom: 16px;
       span {
         margin-left: 8px;
         background-color: red;
@@ -73,10 +69,16 @@
         box-sizing:border-box;
         outline: none;
         padding: 0 16px;
-        width: 500px;
-        position: absolute;
-        margin-top: 30px;
-        margin-bottom: 20px;
+        width: 100%;
+      }
+      select {
+        height: 35px;
+        border: 1px solid #cccc;
+        border-radius: 4px;
+        box-sizing:border-box;
+        outline: none;
+        padding: 0 16px;
+        width: 100%;
       }
     }
   }
@@ -181,7 +183,6 @@
   line-height: 1.4em;
   padding: 16px;
   align-items: center;
-  display: flex;
   color: black;
   &__side{
     margin-left: 8px;
@@ -205,6 +206,16 @@
     position: absolute;
     margin-top: 30px;
     margin-bottom: 20px;
+  }
+  span {
+    margin-left: 8px;
+    background-color: red;
+    color: white;
+    font-size: 15px;
+    padding: 0 4px;
+    border-radius: 2px;
+    font-weight: 600;
+    line-height: 1.4em;
   }
 }
 
@@ -335,6 +346,7 @@
     border-radius: 2px;
     font-weight: 600;
     line-height: 1.4em;
+    display: inline;
   }
   // &__box{
   //   height: 35px;
@@ -496,7 +508,6 @@
   padding: 16px;
 }
 .products__price2{
-  
   font-weight: 600;
   line-height: 1.4em;
   padding: 16px;
@@ -513,11 +524,13 @@
     border-radius: 2px;
     font-weight: 600;
     line-height: 1.4em;
+    display: inline;
   }
   &__mark{
     font-size: 18px;
     margin-right: 8px;
     margin-top: 15px;
+    display: inline;
   }
   &__box{
     height: 35px;
@@ -529,8 +542,9 @@
     width: 100px;
     margin-top: 30px;
     margin-bottom: 20px;
-    
-    
+    display: inline;
+    position: relative;
+    right: 0%;
   }
 }
 .products__main__box5{
@@ -556,7 +570,6 @@
 }
 .products__sell{
   padding: 24px 0;
-  display: flex;
   margin: auto;
   width: 375px;
   height: 50px;
@@ -577,6 +590,7 @@
   border-image: initial;
   margin-bottom: 30px;
   line-height: 50px;
+  font-size: 25px;
 }
 .products__sell__contents__btn--syutten:hover{
   background-color: lightseagreen;

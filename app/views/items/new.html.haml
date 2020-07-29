@@ -40,8 +40,8 @@
       .products__main__box3
         .products__detail__category
           カテゴリー
-          .products__main__name__sub  必須
-          .products__detail__category__box
+          %span 必須
+          .products__main__name__box
         .products__main__name
           ブランド
           .products__detail__brand__side  任意
@@ -60,33 +60,26 @@
         .products__main__name
           配送料の負担
           %span  必須
-          = form.collection_select :delivary_charge_id, DelivaryCharge.all, :id, :name, class: 'products__delivery__postage__box'
+          = form.collection_select :delivary_charge_id, DelivaryCharge.all, :id, :name, class: 'products__detail__status__box'
         .products__main__name
           発送先の地域
           %span  必須
-          = form.collection_select :sender_id, Sender.all, :id, :name, class: 'products__delivery__area__box'
+          = form.collection_select :sender_id, Sender.all, :id, :name, class: 'products__detail__status__box'
         .products__main__name
           発送までの日数
           %span  必須
-          = form.collection_select :shipping_date_id, ShippingDate.all, :id, :name, class: 'products__delivery__day__box'
+          = form.collection_select :shipping_date_id, ShippingDate.all, :id, :name, class: 'products__detail__status__box'
       .products__price
         価格
       .products__main__box5
-        .products__main__name
+        .products__main__name__flex
           販売価格
           .products__price2__side  必須
-          .products__price2__mark  ￥
+          .products__price2__mark  　￥
           = form.number_field :price, class: 'products__price2__box'
-        .products__price__fee
-          販売手数料 (10%)
-        .products__price__profit
-          販売利益
       .products__main__box6
         .products__sell
           = form.submit "出品する", class: 'products__sell__contents__btn--syutten'
-        .products__draft
-          = link_to "#", class: "products__sell__contents__btn--save" do
-            下書きに保存する
         .products__back
           = link_to "#", class: "products__sell__contents__btn--back" do
             もどる
