@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :move_to_index, except: [:index, :show]
+  before_action :move_to_signin, except: :index
 
   def index
     redirect_to '/items/new'
@@ -35,7 +35,7 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:name, :price, :product_description, :size, :brand, :condition_id, :delivary_charge_id, :sender_id, :shipping_date_id, images_attributes: [:image]).merge(saler_id: current_user.id)
   end
 
-  def move_to_index
+  def move_to_signin
     redirect_to '/users/sign_in' unless user_signed_in?
   end
   
