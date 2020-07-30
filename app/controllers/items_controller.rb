@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_item,only: [:show]
 
   def index
     @items = Item.all
@@ -8,6 +9,10 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @tax_in_price = @products.price * 1.1
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 
   def item_params
@@ -30,4 +35,5 @@ class ItemsController < ApplicationController
       # buyer:current_user.id
     )
   end
+
 end
