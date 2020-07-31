@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   before_action :move_to_signin, except: :index
 
   def index
-    redirect_to '/items/new'
+    redirect_to new_item_path
   end
 
   def new
