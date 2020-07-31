@@ -4,7 +4,8 @@ class ItemsController < ApplicationController
   before_action :move_to_signin, except: :index
 
   def index
-    redirect_to new_item_path
+    # redirect_to new_item_path
+    @items = Item.all.order('id DESC').limit(4)
   end
 
   def new

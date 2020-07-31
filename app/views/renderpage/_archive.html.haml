@@ -11,7 +11,7 @@
           -if item.buyer == nil
             .new-items__products__lists__list
               .new-items__products__lists__list--pic
-                = image_tag item.image.to_s
+                = image_tag item.images.first.image.url
               .new-items__products__lists__list--body
                 %h3.new-items__products__lists__list--body__title
                   %p= item.name
@@ -25,7 +25,7 @@
           -else
             .new-items__products__lists__list
               .new-items__products__lists__list--pic
-                = image_tag item.image.to_s
+                = image_tag item.images.first.image.url
                 .new-items__products__lists__list--pic--sold
                   .new-items__products__lists__list--pic--sold--inner
                     SOLD
