@@ -9,8 +9,10 @@
 //  */
  
 @import "reset";
+@import "error_messages";
 @import "renderpage/toppages";
-@import "buyconfirmations/index";
+@import "renderpage/item";
+@import "purchase";
 @import "card/new";
 @import "renderpage/main-top";
 @import "renderpage/introduction";

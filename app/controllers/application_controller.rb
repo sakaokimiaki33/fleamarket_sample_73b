@@ -4,6 +4,18 @@ class ApplicationController < ActionController::Base
     # Devise でメールアドレスとパスワード以外の値を受け取る為にストロングパラメータ（ "configure_permitted_parameters" メソッド）を設定する。
   protect_from_forgery with: :exception
 
+  rescue_from StandardError, with: :render_500 unless Rails.env.development?
+  rescue_from ActiveRecord::RecordNotFound, with: :render_404 unless Rails.env.development?
+
+  def render_404(e = nil)
+    if e
+      logger.error e 
+      logger.error e.backtrace.join("\n") 
+    end
+
+    render template: 'errors/error404', status: 404, layout: 'application', content_type: 'text/html'
+  end
+
   protected
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:user_img, :family_name, :family_name_kana, :name, :name_kana, :nickname, :gender, :phone, :birthday, :address_attributes => [:family_name_deliver, :name_deliver, :postal_code, :prefecture, :city, :block, :building]])
