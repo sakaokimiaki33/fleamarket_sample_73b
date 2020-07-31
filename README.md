@@ -103,12 +103,12 @@ belongs_to :buyer, class_name: "User", optional: true
 ## imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|str|string||
+|image|string||
 |item_id|integer|null: false, foreign_key: true|
 
 ### Association
-mount_uploader :src, ImageUploader
-belongs_to :product
+mount_uploader :image, ImageUploader
+belongs_to :item
 
 
 ## categoriesテーブル
