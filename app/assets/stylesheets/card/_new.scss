@@ -1,41 +1,124 @@
-$font-color:        white;
-$basic-color:       rgb(93, 250, 255);
-$border-color:      rgb(201, 201, 201);
-$form-color:        rgb(161, 161, 161);
-$background-color:  rgb(245, 245, 245);
-
-.card{
-  width: 80%;
-  height: auto;
-  background-color: $background-color;
-  padding: 60px;
-  margin: 0 auto;
-  &__check{
-    height: 80px;
-    width: 70%;
-    padding: 30px;
-    margin: 10px auto;
-    border: 1px solid $border-color;
-    display: flex;
-    justify-content: space-between;
-    &__number{
-      font-size: 20px;
+.main {
+  width: 75%;
+  height: 800px;
+  .card_regist-form {
+    width: 60%;
+    height: 500px;
+    margin: 50px auto ;
+    border: 1px solid #d3d3d3;
+    background-color: white;
+    h2 {
+      font-size: 1.5em;
       font-weight: bold;
+      text-align: center;
+      margin: 1.5em;
     }
-    #card_number, #cvc{
+    &__box {
+      width: 400px;
+      height: 500px;
+      margin: 0 auto;
+      &__user-input {
+        font-weight: bold;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        span {
+          border: red solid 1px;
+          color: white;
+          background-color: red;
+          border-radius: 2px;
+          text-align: center;
+          font-size: 12px;
+          padding: 2px;
+        }  
+      }
+      &__image {
+        &__img {
+          margin-top: 10px;
+          width: 40px;
+          height: 30px;
+        }
+      }
+    
+    .number, .cvc{
       width: 300px;
-      font-size: 16px;
-      padding: 5px;
-      outline: none;
+      height: 30px;
     }
-  .back{
-    font-size: 18px;
-    a{
-      color: $form-color;
+    select {
+      width: 60px;
+      height: 30px;
     }
-    :hover{
-      color: black;
+    
+    #token_submit {
+      text-align: center;
+      line-height: 50px;
+      border: red solid 1px;
+      color: white;
+      background-color: red;
+      border-radius: 4px;
+      width: 300px;
+      height: 50px;
+      margin: 20px auto;
     }
-  }
+    #token_submit:hover {
+      background-color: rgba(240, 126, 126, 0.897);
+    }
+    }
+  }  
 }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// $font-color:        white;
+// $basic-color:       rgb(93, 250, 255);
+// $border-color:      rgb(201, 201, 201);
+// $form-color:        rgb(161, 161, 161);
+// $background-color:  rgb(245, 245, 245);
+
+// .card{
+//   width: 80%;
+//   height: auto;
+//   background-color: $background-color;
+//   padding: 60px;
+//   margin: 0 auto;
+//   &__check{
+//     height: 80px;
+//     width: 70%;
+//     padding: 30px;
+//     margin: 10px auto;
+//     border: 1px solid $border-color;
+//     display: flex;
+//     justify-content: space-between;
+//     &__number{
+//       font-size: 20px;
+//       font-weight: bold;
+//     }
+//     #card_number, #cvc{
+//       width: 300px;
+//       font-size: 16px;
+//       padding: 5px;
+//       outline: none;
+//     }
+//   .back{
+//     font-size: 18px;
+//     a{
+//       color: $form-color;
+//     }
+//     :hover{
+//       color: black;
+//     }
+//   }
+// }
+// }
