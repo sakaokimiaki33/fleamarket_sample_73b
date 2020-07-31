@@ -1,39 +1,44 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_item,only: [:show]
+  before_action :move_to_signin, except: :index
 
   def index
-    @items = Item.all
+    redirect_to new_item_path
   end
 
-  def show
-    @item = Item.find(params[:id])
-    @tax_in_price = @products.price * 1.1
+  def new
+    @item = Item.new
+    @item.images.new
   end
 
-  def set_item
-    @item = Item.find(params[:id])
+  def create
+    @item = Item.new(item_params)
+    if @item.save
+      redirect_to root_path
+    else
+      @item.images.new
+      render :new
+    end
   end
 
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
+  end
+
+  private
+  
   def item_params
-    params.require(:item).permit(
-      :name, 
-      :price, 
-      :product_description, 
-      :size,
-      :bland,
-      :condition,
-      :delivary_charge,
-      :sender,
-      :shipping_date,
-      :images_id,
-      :category_id,
-      :buyer,
-    ).merge(
-      user_id: current_user.id, 
-      # saler:current_user.id,
-      # buyer:current_user.id
-    )
+    params.require(:item).permit(:name, :price, :product_description, :size, :brand, :condition_id, :delivary_charge_id, :sender_id, :shipping_date_id, images_attributes: [:image]).merge(saler_id: current_user.id)
   end
 
+  def move_to_signin
+    redirect_to '/users/sign_in' unless user_signed_in?
+  end
+  
 end

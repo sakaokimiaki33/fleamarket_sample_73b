@@ -41,23 +41,28 @@ ActiveRecord::Schema.define(version: 2020_07_19_022551) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.integer "price", null: false
-    t.text "product_description", null: false
-    t.string "size"
-    t.text "brand"
-    t.text "condition", null: false
-    t.text "delivary_charge", null: false
-    t.text "sender", null: false
-    t.string "shipping_date", null: false
-    t.integer "user_id", null: false
-    t.integer "category_id", null: false
+  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "image"
+    t.bigint "item_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "image"
-    t.integer "saler"
-    t.integer "buyer"
+    t.index ["item_id"], name: "index_images_on_item_id"
+  end
+
+  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.integer "price"
+    t.text "product_description"
+    t.string "size"
+    t.text "brand"
+    t.integer "condition_id"
+    t.integer "delivary_charge_id"
+    t.integer "sender_id"
+    t.integer "shipping_date_id"
+    t.integer "saler_id"
+    t.integer "buyer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "toppages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -85,4 +90,5 @@ ActiveRecord::Schema.define(version: 2020_07_19_022551) do
   end
 
   add_foreign_key "addresses", "users"
+  add_foreign_key "images", "items"
 end
