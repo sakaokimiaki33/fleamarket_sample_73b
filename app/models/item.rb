@@ -1,8 +1,6 @@
 class Item < ApplicationRecord
   has_many :comments, dependent: :destroy
   belongs_to :user
-  # belong_to :category
-  # belongs_to :brand, dependent: :destroy, optional: true
 
   # validates_associated :images
   validates :name, :price, :product_description, :size, :brand, :condition, :delivary_charge, :sender, :saler, :buyer, :image, :shipping_date, :category_id, :user_id, presence: true
