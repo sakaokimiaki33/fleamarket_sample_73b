@@ -22,24 +22,25 @@ class PurchaseController < ApplicationController
   end
 
   def pay
+      @item = Item.find(2)
+      price = @item.price*1.1
+      card = cards.first
+      Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+      Payjp::Charge.create(
+      :amount => price.truncate, #支払金額を入力（itemテーブル等に紐づけるべき?）
+      :customer => card.customer_id, #顧客ID
+      :currency => 'jpy', #日本円
+    )
+    
     @item = Item.find(2)
-    price = @item.price*1.1
-    card = cards.first
-    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
-    Payjp::Charge.create(
-    :amount => price.truncate, #支払金額を入力（itemテーブル等に紐づけるべき?）
-    :customer => card.customer_id, #顧客ID
-    :currency => 'jpy', #日本円
-  )
-  
-  @item = Item.find(2)
-  @item.buyer += 1
-  if @item.save
-    redirect_to action: 'done' #完了画面に移動
-  else
-    redirect_to action: 'index'
+    @item.buyer += 1
+    if @item.save
+      redirect_to action: 'done' #完了画面に移動
+    else
+      redirect_to action: 'index'
+    end
   end
-
+  
   def done
     @item= Item.find(params[:id])
     @item.update( buyer: current_user.id)
