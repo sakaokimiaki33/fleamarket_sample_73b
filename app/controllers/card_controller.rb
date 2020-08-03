@@ -1,5 +1,5 @@
 class CardController < ApplicationController
-  before_action :set_cards,only: [:delete, :show]
+  before_action :set_card,only: [:delete, :show]
 
   require "payjp"
 
@@ -49,8 +49,8 @@ class CardController < ApplicationController
     end
   end
 
-  def set_cards
-    cards = Card.where(user_id: current_user.id)
+  def set_card
+    card = Card.where(user_id: current_user.id)
   end
 
 end
