@@ -1,0 +1,77 @@
+.main {
+  width: 75%;
+  height: 800px;
+}
+
+  .card__info {
+    width: 60%;
+    height: 400px;
+    margin: 50px auto;
+    border: 1px solid #d3d3d3;
+    background-color: white;
+    h2 {
+      font-size: 1.5em;
+      font-weight: bold;
+      text-align: center;
+      margin: 1.5em;
+    }
+    &__box {
+      width: 300px;
+      height: 250px;
+      margin: 0 auto;
+      
+      &__number {
+        font-size: 1em;
+        margin-bottom: 10px;
+      }
+      &__number-display {
+        margin-left: 20px;
+        margin-bottom: 10px;
+      }
+      
+      
+      &__exp {
+        font-size: 1em;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        &__small {
+          font-size: 0.8em;
+        }
+      }
+      &__btn {
+        width: 80px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        border: red solid 1px;
+        color: white;
+        background-color: red;
+        border-radius: 4px;
+        margin-top: 20px;
+      }
+      &__btn:hover {
+        background-color: rgba(240, 126, 126, 0.897);
+        cursor: pointer;
+      }
+      .back.card_margin {
+        width: 80px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        background-color: lightgrey;
+        border: lightgrey solid 1px;
+        border-radius: 4px;
+        margin-top: 10px;
+        cursor: pointer;
+      }
+      .back.card_margin:hover {
+        background-color: rgb(233, 231, 231)
+      }
+
+      .card_note {
+        font-size: 0.8em;
+        font-weight: bold;
+        margin-top: 20px;
+      }
+    }
+}
