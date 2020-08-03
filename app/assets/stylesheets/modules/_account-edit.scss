@@ -14,12 +14,13 @@
 .mypage {
   background-color: #f8f8f8;
   width: 100%;
-  height: 900px;
+  height: 400px;
   .main {
     width:  75%;
     height: 800px;
     .edit {
       width: 75%;
+      height: 800px;
       margin: 0 auto;
       &__regist-form {
         display: flex;
