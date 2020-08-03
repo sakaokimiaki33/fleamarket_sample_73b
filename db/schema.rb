@@ -63,11 +63,9 @@ ActiveRecord::Schema.define(version: 2020_07_19_022551) do
     t.integer "buyer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "toppages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "image"
+    t.integer "saler"
+    t.integer "buyer"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
