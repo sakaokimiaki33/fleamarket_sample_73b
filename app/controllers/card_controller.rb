@@ -1,5 +1,5 @@
 class CardController < ApplicationController
-  # before_action :set_cards,only: [:new, :delete, :show]
+  # before_action :set_cards,only: [:delete, :show]
 
   require "payjp"
 
