@@ -55,11 +55,12 @@
         = button_tag "お気に入り❤︎"
       .alert__btn
         = link_to "不適切な商品の通報" 
-    -if user_signed_in? && current_use.id == @item.user_id
-      = link_to "編集"
-      = link_to "削除"
-    -else
-      = link_to "商品購入"
+    .product__detail__edit__delete__buy
+      -if user_signed_in? && current_user.id == @item.user_id
+        = link_to "編集", class: "product__detail__edit"
+        = link_to "削除", class: "product__detail__delete"
+      -else
+        = link_to "商品購入", class: "product__detail__buy"
 
   .product__comment__box
     %textarea{ cols: 100, rows: 8 }

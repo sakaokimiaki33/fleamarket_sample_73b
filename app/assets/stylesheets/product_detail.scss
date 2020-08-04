@@ -103,6 +103,21 @@
         font-size: 14px;
       }
     }
+    .product__detail__edit__delete__buy{
+      display: flex;
+      justify-content: space-evenly;
+      padding-top: 30px;
+      font-size: 30px;
+      font-weight: bold;
+      color: #3CCACE;
+      a{
+        color: #3CCACE;
+        border: solid 1px;
+        border-radius: 12px;
+        padding: 8px;
+      }
+    }
+
   }
   .product__comment__box{
     background-color: #ffffff;
