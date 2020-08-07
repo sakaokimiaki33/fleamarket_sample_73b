@@ -30,6 +30,7 @@ class ItemsController < ApplicationController
   def update
     @item = Item.find(params[:id])
     @item.update(item_update_params)
+    redirect_to root_path
   end
 
   def destroy
