@@ -17,3 +17,9 @@ module FleamarketSample73b
     # the framework and any gems in your application.
   end
 end
+
+module BoardApp
+  class Application < Rails::Application
+    config.i18n.default_locale = :ja
+  end
+end

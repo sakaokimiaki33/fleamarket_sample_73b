@@ -3,6 +3,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+         
+  has_many :buyed_items, foreign_key: "buyer_id", class_name: "Item"
+  has_many :saling_items, -> { where("buyer_id is NULL") }, foreign_key: "saler_id", class_name: "Item"
+  has_many :sold_items, -> { where("buyer_id is not NULL") }, foreign_key: "saler_id", class_name: "Item"
 
   mount_uploader :user_img, UserImageUploader
   validates :family_name, presence: true
@@ -20,4 +24,5 @@ class User < ApplicationRecord
   # has_many :cards, dependent: :destroy
   # has_many :items, dependent: :destroy
   # has_many :comments, dependent: :destroy
+  has_many :items, dependent: :destroy
 end

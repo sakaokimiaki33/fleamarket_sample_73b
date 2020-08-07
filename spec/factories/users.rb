@@ -5,10 +5,10 @@ FactoryBot.define do
     family_name_kana      {"サトウ"}
     name                  {"一郎"}
     name_kana             {"イチロウ"}
-    nickname              {"Suzuki"}
+    nickname { Faker::Name.name }
     gender                {"女性"}
     phone                 {"08012345678"}
-    email                 {"Sato@gmail.com"}
+    email { Faker::Internet.email }
     password              {"1234567"}
     password_confirmation {"1234567"}
     birthday              {"2020-03-16"}

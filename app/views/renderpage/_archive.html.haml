@@ -6,61 +6,36 @@
       %h3.ew-items__products__head__title
         = link_to "アーカイバ", "#"
     .new-items__products__lists
-      = link_to "/" do
-        .new-items__products__lists__list
-          .new-items__products__lists__list--pic
-            = image_tag "material/pict/food1.jpeg"
-          .new-items__products__lists__list--body
-            %h3.new-items__products__lists__list--body__title
-              ee
-            .new-items__products__lists__list--body__details
-              %ul
-                %li.new-items__products__lists__list--body__details--cost
-                  1000円
-                %li
-                  ★
-                %li
-                  0
-              %p （税込）
-      = link_to "/" do
-        .new-items__products__lists__list
-          .new-items__products__lists__list--pic
-            = image_tag "material/pict/food2.png"
-          .new-items__products__lists__list--body
-            %h3.new-items__products__lists__list--body__title
-              product3
-            .new-items__products__lists__list--body__details
-              %ul
-                %li
-                  21000円
-                %li
-                  ★0
-              %p （税込）        
-      = link_to "/" do
-        .new-items__products__lists__list
-          .new-items__products__lists__list--pic
-            = image_tag "material/pict/food3.png"
-          .new-items__products__lists__list--body
-            %h3.new-items__products__lists__list--body__title
-              product2
-            .new-items__products__lists__list--body__details
-              %ul
-                %li
-                  3890000円
-                %li
-                  ★0
-              %p （税込）
-      = link_to "/" do
-        .new-items__products__lists__list
-          .new-items__products__lists__list--pic
-            = image_tag "material/pict/food4.png"
-          .new-items__products__lists__list--body
-            %h3.new-items__products__lists__list--body__title
-              product4
-            .new-items__products__lists__list--body__details
-              %ul
-                %li
-                  209000円
-                %li
-                  ★0
-              %p （税込） 
+      - @items.each do |item|
+        = link_to "/" do
+          -if item.buyer == nil
+            .new-items__products__lists__list
+              .new-items__products__lists__list--pic
+                = image_tag item.images.first.image.url
+              .new-items__products__lists__list--body
+                %h3.new-items__products__lists__list--body__title
+                  %p= item.name
+                .new-items__products__lists__list--body__details
+                  %ul
+                    %li 
+                      = item.price 
+                    %li 
+                      ★0
+                  %p （税込）
+          -else
+            .new-items__products__lists__list
+              .new-items__products__lists__list--pic
+                = image_tag item.images.first.image.url
+                .new-items__products__lists__list--pic--sold
+                  .new-items__products__lists__list--pic--sold--inner
+                    SOLD
+              .new-items__products__lists__list--body
+                %h3.new-items__products__lists__list--body__title
+                  %p= item.name
+                .new-items__products__lists__list--body__details
+                  %ul
+                    %li 
+                      = item.price 
+                    %li 
+                      ★0
+                  %p （税込）
