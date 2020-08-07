@@ -32,6 +32,10 @@ class ItemsController < ApplicationController
   def destroy
   end
 
+  def pickup
+    @items = Item.all.page(params[:page]).per(10).order('id DESC')
+  end
+
   private
   
   def item_params
