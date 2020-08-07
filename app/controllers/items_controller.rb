@@ -24,9 +24,12 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @item = Item.find(params[:id])
   end
 
   def update
+    @item = Item.find(params[:id])
+    @item.update(item_update_params)
   end
 
   def destroy
@@ -40,6 +43,10 @@ class ItemsController < ApplicationController
   
   def item_params
     params.require(:item).permit(:name, :price, :product_description, :size, :brand, :condition_id, :delivary_charge_id, :sender_id, :shipping_date_id, images_attributes: [:image]).merge(saler_id: current_user.id)
+  end
+
+  def item_update_params
+    params.require(:item).permit(:name, :price, :product_description, :size, :brand, :condition_id, :delivary_charge_id, :sender_id, :shipping_date_id, images_attributes: [:image, :_destroy, :id])
   end
 
   def move_to_signin

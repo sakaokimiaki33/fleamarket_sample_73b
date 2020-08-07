@@ -1,0 +1,106 @@
+= render 'renderpage/header'
+
+- if @item.errors.any?
+  .error-message
+    %ul{style: "color: red"}
+      - @item.errors.full_messages.each do |message|
+        %li= message
+.products
+  .products__main
+    = form_with model: @item, local: true do |form|
+      .products__main__box
+        .products__main__image
+          出品画像
+          .products__main__image__side  必須
+        .products__main__image__detail
+          最大5枚までアップロードできます
+        .post__drop__box__container
+          .prev-content
+            //JSで挿入したhtmlと同じ形 each文でのプレビュー表示
+            - @item.images.each do |image|
+              .preview-box
+                .upper-box
+                  = image_tag image.image.url, width: "112", height: "112", alt: "preview"
+                .lower-box
+                  .update-box
+                    %label.edit-btn 編集
+                  .delete-box
+                    .delete-btn
+                      %span 削除
+          .label-content
+
+            //プレビューの数に合わせてforオプションを指定
+            = form.label :"images_attributes_#{@item.images.length}_image", class: "label-box", id: "label-box--#{@item.images.length}" do
+              %pre.label-box__text-visible クリックしてファイルをアップロード
+          .hidden-content
+            = form.fields_for :images do |i|
+
+              //プレビューが出ている分のfile_fieldとdelete用のチェックボックスを設置
+              = i.file_field :image, class: "hidden-field"
+              = i.check_box:_destroy, class: "hidden-checkbox"
+
+              //5つのfile_fieldを準備するに当たって、足りない分を表示
+            - @item.images.length.upto(4) do |i|
+              %input{name: "item[images_attributes][#{i}][image]", id: "item_images_attributes_#{i}_image", class:"hidden-field", type:"file"}
+
+      .products__main__box2
+        .products__main__name
+          商品名
+          %span  必須
+          = form.text_field :name, class: 'products__main__name__box'
+        .products__main__name
+          商品の説明
+          %span  必須
+          = form.text_field :product_description, class: 'products__main__name__box'
+      .products__detail
+        商品の詳細
+      .products__main__box3
+        .products__detail__category
+          カテゴリー
+          %span 必須
+          .products__main__name__box
+        .products__main__name
+          ブランド
+          .products__detail__brand__side  任意
+          = form.text_field :brand, class: 'products__main__name__box'
+        .products__main__name
+          サイズ
+          .products__detail__brand__side  任意
+          = form.text_field :size, class: 'products__main__name__box'
+        .products__main__name
+          商品の状態
+          %span  必須
+          = form.collection_select :condition_id, Condition.all, :id, :name, class: 'products__detail__status__box'
+      .products__delivery
+        配送について
+      .products__main__box4
+        .products__main__name
+          配送料の負担
+          %span  必須
+          = form.collection_select :delivary_charge_id, DelivaryCharge.all, :id, :name, class: 'products__detail__status__box'
+        .products__main__name
+          発送先の地域
+          %span  必須
+          = form.collection_select :sender_id, Sender.all, :id, :name, class: 'products__detail__status__box'
+        .products__main__name
+          発送までの日数
+          %span  必須
+          = form.collection_select :shipping_date_id, ShippingDate.all, :id, :name, class: 'products__detail__status__box'
+      .products__price
+        価格
+      .products__main__box5
+        .products__main__box5__flex
+          .products__main__name
+            販売価格
+          .products__price2__side
+            必須
+          .products__price2__mark
+            ￥
+          = form.number_field :price, class: 'products__price2__box'
+      .products__main__box6
+        .products__sell
+          = form.submit "出品する", class: 'products__sell__contents__btn--syutten'
+        .products__back
+          = link_to "/", class: "products__sell__contents__btn--back" do
+            もどる
+  = render 'renderpage/footer'
