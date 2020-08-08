@@ -1,7 +1,8 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_item,only: [:show]
-  before_action :move_to_signin, except: :index
+  before_action :move_to_signin, except: [:index, :edit, :update]
+  before_action :limit_editer, only: [:edit, :update]
 
   def index
     # redirect_to new_item_path
@@ -52,6 +53,12 @@ class ItemsController < ApplicationController
 
   def move_to_signin
     redirect_to '/users/sign_in' unless user_signed_in?
+  end
+
+  def limit_editer
+    unless Item.find(params[:id]).saler_id.to_i == current_user.id
+      redirect_to root_path
+    end
   end
   
 end
