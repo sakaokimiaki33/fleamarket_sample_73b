@@ -12,10 +12,8 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.integer :shipping_date_id
       t.integer :saler_id
       t.integer :buyer_id
-      # t.references :category_id, null: false, foreign_key: true
+      t.references :category, foreign_key: true
       t.timestamps
     end
   end
 end
-
-#カテゴリテーブル作成時にコメントアウト削除

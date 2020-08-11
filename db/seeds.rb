@@ -115,7 +115,7 @@ lady_15 = lady.children.create(name: "その他")
 # Mens
 men = Category.create(name: "メンズ")
 men_1 = men.children.create(name: "トップス")
-men_1.children.create([{name: "Tシャツ)"},
+men_1.children.create([{name: "Tシャツ"},
                        {name: "シャツ"},
                        {name: "ポロシャツ"},
                        {name: "タンクトップ"},
