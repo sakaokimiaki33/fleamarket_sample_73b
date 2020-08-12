@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   before_action :set_item,only: [:show]
   before_action :move_to_signin, except: [:index, :edit, :update]
   before_action :limit_editer, only: [:edit, :update]
-  before_action :set_action, only: [:edit, :update]
+  before_action :set_item, only: [:edit, :update]
 
   def index
     # redirect_to new_item_path
@@ -63,7 +63,7 @@ class ItemsController < ApplicationController
     end
   end
 
-  def set_action
+  def set_item
     @item = Item.find(params[:id])
   end
   
