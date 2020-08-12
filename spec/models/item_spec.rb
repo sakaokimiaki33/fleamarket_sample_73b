@@ -1,4 +1,10 @@
 require 'rails_helper'
+
+
+RSpec.describe Item, type: :model do
+  pending "add some examples to (or delete) #{__FILE__}"
+end
+
 describe Item do
   describe '#create' do
     it "全ての項目に値が入力されている場合、登録できる。" do
@@ -59,3 +65,4 @@ describe Item do
     end
   end
 end
+
