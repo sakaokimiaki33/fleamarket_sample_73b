@@ -1,7 +1,9 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_item,only: [:show]
-  before_action :move_to_signin, except: :index
+  before_action :move_to_signin, except: [:index, :edit, :update]
+  before_action :limit_editer, only: [:edit, :update]
+  before_action :set_item, only: [:edit, :update]
 
   def index
     # redirect_to new_item_path
@@ -27,6 +29,11 @@ class ItemsController < ApplicationController
   end
 
   def update
+    if @item.update(item_update_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -42,8 +49,22 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:name, :price, :product_description, :size, :brand, :condition_id, :delivary_charge_id, :sender_id, :shipping_date_id, images_attributes: [:image]).merge(saler_id: current_user.id)
   end
 
+  def item_update_params
+    params.require(:item).permit(:name, :price, :product_description, :size, :brand, :condition_id, :delivary_charge_id, :sender_id, :shipping_date_id, images_attributes: [:image, :_destroy, :id])
+  end
+
   def move_to_signin
     redirect_to '/users/sign_in' unless user_signed_in?
+  end
+
+  def limit_editer
+    unless Item.find(params[:id]).saler_id.to_i == current_user.id
+      redirect_to root_path
+    end
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
   
 end
