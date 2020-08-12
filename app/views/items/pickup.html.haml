@@ -1,11 +1,10 @@
-.new-items
+= render 'renderpage/header'
+
+%div.new-pickups
   %h2.new-items__title
     ピックアップカテゴリー
   .new-items__products
-    .new-items__products__head
-      %h3.ew-items__products__head__title
-        = link_to "新規投稿商品", pickup_items_path
-    .new-items__products__lists
+    %div.new-items__products__lists.all
       - @items.each do |item|
         = link_to product_detail_index_path do
           -if item.buyer == nil
@@ -40,4 +39,5 @@
                       ★0
                   %p （税込）
                 
-
+  = paginate @items 
+  = render 'renderpage/footer'

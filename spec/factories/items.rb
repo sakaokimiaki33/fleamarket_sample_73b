@@ -1,5 +1,7 @@
 FactoryBot.define do
 
+
+
   factory :item do
     name {"sakao"}
     price {"1111"}
@@ -22,3 +24,4 @@ FactoryBot.define do
     image   { Rack::Test::UploadedFile.new(File.join(Rails.root, "spec/factories/test.png"), 'image/png') }
   end
 end
+

@@ -87,7 +87,7 @@ gem 'fog-aws'
 gem 'ancestry'
 gem 'payjp'
 gem 'dotenv-rails'
-
+gem 'kaminari'
 
 
 gem 'active_hash'
