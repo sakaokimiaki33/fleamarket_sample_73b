@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
   before_action :set_item,only: [:show]
   before_action :move_to_signin, except: [:index, :edit, :update]
   before_action :limit_editer, only: [:edit, :update]
+  before_action :set_action, only: [:edit, :update]
 
   def index
     # redirect_to new_item_path
@@ -25,11 +26,9 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
   end
 
   def update
-    @item = Item.find(params[:id])
     if @item.update(item_update_params)
       redirect_to root_path
     else
@@ -62,6 +61,10 @@ class ItemsController < ApplicationController
     unless Item.find(params[:id]).saler_id.to_i == current_user.id
       redirect_to root_path
     end
+  end
+
+  def set_action
+    @item = Item.find(params[:id])
   end
   
 end
