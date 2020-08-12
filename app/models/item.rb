@@ -18,6 +18,6 @@ class Item < ApplicationRecord
   validates :images, presence: { message: 'は１枚以上登録してください' }
   validates :name, :price, :product_description, presence: true
   validates :condition_id, :delivary_charge_id, :sender_id, :shipping_date_id, numericality: { greater_than: 0, message: "を選択してください" }
-  # validates :category_id, presence: true
+  validates :category_id, presence: true
 
 end
