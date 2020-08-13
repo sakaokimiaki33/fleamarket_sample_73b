@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   before_action :set_item,only: [:show]
   before_action :move_to_signin, except: [:index, :edit, :update]
   before_action :limit_editer, only: [:edit, :update]
-  before_action :set_item, only: [:edit, :update]
+  before_action :set_item, only: [:edit, :update, :show]
 
   def index
     # redirect_to new_item_path
@@ -24,6 +24,9 @@ class ItemsController < ApplicationController
       @item.images.new
       render :new
     end
+  end
+
+  def show
   end
 
   def edit

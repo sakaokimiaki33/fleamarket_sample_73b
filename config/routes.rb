@@ -30,7 +30,7 @@ Rails.application.routes.draw do
   resources :card, only: [:new, :show]
   resources :purchase, only: [:index, :done]
   resources :product_detail, only:[:index]
-  resources :items, except: :show
+  resources :items
   resources :products,only:[:index, :new]
   resources :mypage, only:[:index, :new]
 end
