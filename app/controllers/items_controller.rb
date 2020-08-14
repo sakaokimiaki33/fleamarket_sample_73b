@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
 
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_item,only: [:show]
-  before_action :move_to_signin, except: :index
+  before_action :move_to_signin, except: [:index, :show]
 
   def index
     # redirect_to new_item_path
@@ -33,14 +33,22 @@ class ItemsController < ApplicationController
   def destroy
   end
 
+  def show
+    @item = Item.find(params[:id])
+  end
+
   private
   
   def item_params
-    params.require(:item).permit(:name, :price, :product_description, :size, :brand, :condition_id, :delivary_charge_id, :sender_id, :shipping_date_id, images_attributes: [:image]).merge(saler_id: current_user.id)
+    params.permit(:name, :price, :product_description, :size, :brand, :condition_id, :delivary_charge_id, :sender_id, :shipping_date_id, images_attributes: [:image]).merge(saler_id: current_user.id)
   end
 
   def move_to_signin
     redirect_to '/users/sign_in' unless user_signed_in?
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
   
 end
