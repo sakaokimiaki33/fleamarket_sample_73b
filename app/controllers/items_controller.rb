@@ -1,10 +1,10 @@
 class ItemsController < ApplicationController
 
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_item,only: [:show]
+  before_action :set_item, only: [:show, :edit, :update]
   before_action :move_to_signin, except: [:index, :edit, :update]
   before_action :limit_editer, only: [:edit, :update]
-  before_action :set_item, only: [:edit, :update]
+  # before_action :set_item, only: [:edit, :update]
 
   def index
     # redirect_to new_item_path
@@ -17,7 +17,7 @@ class ItemsController < ApplicationController
 
     @category_parent_array = ["選択してください"]
     Category.where(ancestry: nil).each do |parent|
-      @category_parent_array << parent.name
+      @category_parent_array << parent.id
     end
   end
 
@@ -29,6 +29,9 @@ class ItemsController < ApplicationController
       @item.images.new
       render :new
     end
+  end
+
+  def show
   end
 
   def edit
@@ -45,18 +48,18 @@ class ItemsController < ApplicationController
   def destroy
   end
 
+  def pickup
+    @items = Item.all.page(params[:page]).per(10).order('id DESC')
+  end 
+
   def get_category_children
-    @category_children = Category.find_by("#{params[:parent_name]}", ancestry: nil).children
-    
-    # binding.pry
+    @category_children = Category.find(params[:parent_id]).children
   end
   
   def get_category_grandchildren
-    @category_grandchildren = Category.find("#{params[:child_id]}").children
-  def pickup
-    @items = Item.all.page(params[:page]).per(10).order('id DESC')
+    @category_grandchildren = Category.find(params[:child_id]).children
   end
-
+  
   private
   
   def item_params
@@ -64,14 +67,13 @@ class ItemsController < ApplicationController
   end
 
   def item_update_params
-    params.require(:item).permit(:name, :price, :product_description, :size, :brand, :condition_id, :delivary_charge_id, :sender_id, :shipping_date_id, images_attributes: [:image, :_destroy, :id])
+    params.require(:item).permit(:name, :price, :product_description, :category_id, :size, :brand, :condition_id, :delivary_charge_id, :sender_id, :shipping_date_id, images_attributes: [:image, :_destroy, :id])
   end
 
   def move_to_signin
     redirect_to '/users/sign_in' unless user_signed_in?
   end
 
-end
   def limit_editer
     unless Item.find(params[:id]).saler_id.to_i == current_user.id
       redirect_to root_path
@@ -81,5 +83,5 @@ end
   def set_item
     @item = Item.find(params[:id])
   end
-  
+
 end

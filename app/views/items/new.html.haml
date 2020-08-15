@@ -43,7 +43,7 @@
           %span 必須
           .category-select-wrapper
             .category-select-wrapper__box
-            = form.collection_select :category_id, Category.roots, :id, :name, {include_blank: "選択してください"}, required: true, class: 'category-select-wrapper__box--select', id: 'parent_category'
+            = form.collection_select :category_id, Category.roots, :id, :name, {include_blank: "選択してください"},  class: 'category-select-wrapper__box--select', id: 'parent_category'
             
         .products__main__name
           ブランド

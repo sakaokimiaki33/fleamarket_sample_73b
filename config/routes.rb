@@ -8,10 +8,9 @@ Rails.application.routes.draw do
   resources :items do
     collection do
       post 'pay', to: 'items#pay'
-      
+      get 'pickup',to: 'items#pickup'
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
-      get 'pickup',to: 'items#pickup'
     end
   end
 
@@ -32,9 +31,8 @@ Rails.application.routes.draw do
   end
   resources :card, only: [:new, :show]
   resources :purchase, only: [:index, :done]
-  resources :product_detail, only:[:index]
-  resources :items, except: :show
+  # resources :product_detail, only:[:index]
+  resources :items
   resources :products,only:[:index, :new]
   resources :mypage, only:[:index, :new]
-  resources :category, only:[:index, :show, :new]
 end

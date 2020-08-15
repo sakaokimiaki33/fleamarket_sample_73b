@@ -7,7 +7,7 @@
         = link_to "新規投稿商品", pickup_items_path
     .new-items__products__lists
       - @items.each do |item|
-        = link_to product_detail_index_path do
+        = link_to item_path(item.id) do
           -if item.buyer == nil
             .new-items__products__lists__list
               .new-items__products__lists__list--pic

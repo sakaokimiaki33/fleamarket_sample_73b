@@ -1,32 +1,56 @@
 # ladies
 lady = Category.create(name: "レディース")
 lady_1 = lady.children.create(name: "トップス")
-lady_1.children.create([{name: "Tシャツ"},
-                        {name: "シャツ/ブラウス"},
+lady_1.children.create([{name: "Tシャツ/カットソー(半袖/袖なし)"},
+                        {name: "Tシャツ/カットソー(七分/長袖)"},
+                        {name: "シャツ/ブラウス(半袖/袖なし)"},
+                        {name: "シャツ/ブラウス(七分/長袖)"},
                         {name: "ポロシャツ"},
+                        {name: "キャミソール"},
+                        {name: "タンクトップ"},
+                        {name: "ホルターネック"},
                         {name: "ニット/セーター"},
                         {name: "チュニック"},
-                        {name: "カーティガン"},
+                        {name: "カーティガン/ボレロ"},
+                        {name: "アンサンブル"},
+                        {name: "ベスト/ジレ"},
                         {name: "パーカー"},
                         {name: "トレーナー/スウェット"},
+                        {name: "ベアトップ/チューブトップ"},
                         {name: "ジャージ"},
                         {name: "その他"}])
 lady_2 = lady.children.create(name: "ジャケット/アウター")
 lady_2.children.create([{name: "テーラードジャケット"},
+                        {name: "ノーカラージャケット"},
                         {name: "Gジャン/デニムジャケット"},
                         {name: "レザージャケット"},
                         {name: "ダウンジャケット"},
+                        {name: "ライダースジャケット"},
+                        {name: "ミリタリージャケット"},
+                        {name: "ダウンベスト"},
                         {name: "ジャンパー/ブルゾン"},
+                        {name: "ポンチョ"},
+                        {name: "ロングコート"},
                         {name: "トレンチコート"},
+                        {name: "ダッフルコート"},
+                        {name: "ピーコート"},
+                        {name: "チェスターコート"},
+                        {name: "モッズコート"},
+                        {name: "スタジャン"},
                         {name: "毛皮/ファーコート"},
+                        {name: "スプリングコート"},
                         {name: "スカジャン"},
                         {name: "その他"}])
 lady_3 = lady.children.create(name: "パンツ")
 lady_3.children.create([{name: "デニム/ジーンズ"},
                         {name: "ショートパンツ"},
+                        {name: "カジュアルパンツ"},
+                        {name: "ハーフパンツ"},
                         {name: "チノパン"},
+                        {name: "ワークパンツ/カーゴパンツ"},
                         {name: "クロップドパンツ"},
                         {name: "サロペット/オーバーオール"},
+                        {name: "オールインワン"},
                         {name: "サルエルパンツ"},
                         {name: "ガウチョパンツ"},
                         {name: "その他"}])
@@ -34,6 +58,7 @@ lady_4 = lady.children.create(name: "スカート")
 lady_4.children.create([{name: "ミニスカート"},
                         {name: "ひざ丈スカート"},
                         {name: "ロングスカート"},
+                        {name: "キュロット"},
                         {name: "その他"}])
 lady_5 = lady.children.create(name: "ワンピース")
 lady_5.children.create([{name: "ミニワンピース"},
@@ -45,7 +70,10 @@ lady_6.children.create([{name: "ハイヒール/パンプス"},
                         {name: "ブーツ"},
                         {name: "サンダル"},
                         {name: "スニーカー"},
+                        {name: "ミュール"},
+                        {name: "モカシン"},
                         {name: "ローファー/革靴"},
+                        {name: "フラットシューズ/バレエシューズ"},
                         {name: "長靴/レインシューズ"},
                         {name: "その他"}])
 lady_7 = lady.children.create(name: "ルームウェア/パジャマ")
@@ -74,9 +102,15 @@ lady_10.children.create([{name: "ハンドバッグ"},
                          {name: "スポーツバッグ"},
                          {name: "ショルダーバッグ"},
                          {name: "クラッチバッグ"},
+                         {name: "ポーチ/バニティ"},
                          {name: "ボディバッグ/ウェストバッグ"},
+                         {name: "マザーズバッグ"},
+                         {name: "メッセンジャーバッグ"},
                          {name: "ビジネスバッグ"},
                          {name: "旅行用バッグ/キャリーバッグ"},
+                         {name: "ショップ袋"},
+                         {name: "和装用バッグ"},
+                         {name: "かごバッグ"},
                          {name: "その他"}])
 lady_11 = lady.children.create(name: "アクセサリー")
 lady_11.children.create([{name: "ネックレス"},
@@ -86,6 +120,8 @@ lady_11.children.create([{name: "ネックレス"},
                          {name: "ピアス"},
                          {name: "イヤリング"},
                          {name: "アンクレット"},
+                         {name: "ブローチ/コサージュ"},
+                         {name: "チャーム"},
                          {name: "その他"}])
 lady_12 = lady.children.create(name: "ヘアアクセサリー")
 lady_12.children.create([{name: "ヘアゴム/シュシュ"},
@@ -98,42 +134,107 @@ lady_13.children.create([{name: "財布"},
                          {name: "名刺入れ/定期入れ"},
                          {name: "キーケース"},
                          {name: "キーホルダー"},
-                         {name: "手袋"},
+                         {name: "手袋/アームカバー"},
+                         {name: "ハンカチ"},
                          {name: "ベルト"},
                          {name: "マフラー/ショール"},
+                         {name: "ストール/スヌード"},
+                         {name: "バンダナ/スカーフ"},
+                         {name: "ネックウォーマー"},
+                         {name: "サスペンダー"},
                          {name: "サングラス/メガネ"},
-                         {name: "傘/レインコート"},
+                         {name: "モバイルケース/カバー"},
+                         {name: "手帳"},
+                         {name: "イヤーマフラー"},
+                         {name: "傘"},
+                         {name: "レインコート/ポンチョ"},
+                         {name: "ミラー"},
+                         {name: "タバコグッズ"},
                          {name: "その他"}])
 lady_14 = lady.children.create(name: "時計")
-lady_14.children.create([{name: "腕時計"},
+lady_14.children.create([{name: "腕時計(アナログ)"},
+                         {name: "腕時計(デジタル)"},
                          {name: "ラバーベルト"},
                          {name: "レザーベルト"},
                          {name: "金属ベルト"},
                          {name: "その他"}])
-lady_15 = lady.children.create(name: "その他")
+lady_15 = lady.children.create(name: "ウィッグ/エクステ")
+lady_15.children.create([{name: "前髪ウィッグ"},
+                         {name: "ロングストレート"},
+                         {name: "ロングカール"},
+                         {name: "ショートストレート"},
+                         {name: "ショートカール"},
+                         {name: "その他"}])
+lady_16 = lady.children.create(name: "浴衣/水着")
+lady_16.children.create([{name: "浴衣"},
+                         {name: "着物"},
+                         {name: "振袖"},
+                         {name: "長襦袢/半襦袢"},
+                         {name: "水着セパレート"},
+                         {name: "水着ワンピース"},
+                         {name: "水着スポーツ用"},
+                         {name: "その他"}])
+lady_17 = lady.children.create(name: "スーツ/フォーマル/ドレス")
+lady_17.children.create([{name: "スカートスーツ上下"},
+                         {name: "パンツスーツ上下"},
+                         {name: "ドレス"},
+                         {name: "パーティーバッグ"},
+                         {name: "シューズ"},
+                         {name: "ウェディング"},
+                         {name: "その他"}])
+lady_18 = lady.children.create(name: "マタニティ")
+lady_18.children.create([{name: "トップス"},
+                         {name: "アウター"},
+                         {name: "インナー"},
+                         {name: "ワンピース"},
+                         {name: "パンツ/スパッツ"},
+                         {name: "スカート"},
+                         {name: "パンツ"},
+                         {name: "授乳服"},
+                         {name: "その他"}])
+lady_19 = lady.children.create(name: "その他")
+lady_19.children.create([{name: "コスプレ"},
+                         {name: "下着"},
+                         {name: "その他"}])
 
 # Mens
 men = Category.create(name: "メンズ")
 men_1 = men.children.create(name: "トップス")
-men_1.children.create([{name: "Tシャツ"},
+men_1.children.create([{name: "Tシャツ/カットソー(半袖/袖なし)"},
+                       {name: "Tシャツ/カットソー(七分/長袖)"},
                        {name: "シャツ"},
                        {name: "ポロシャツ"},
                        {name: "タンクトップ"},
                        {name: "ニット/セーター"},
                        {name: "パーカー"},
+                       {name: "カーティガン"},
                        {name: "スウェット"},
                        {name: "ジャージ"},
+                       {name: "ベスト"},
                        {name: "その他"}])
 men_2 = men.children.create(name: "ジャケット/アウター")
-men_2.children.create([{name: "Gジャン/デニムジャケット"},
+men_2.children.create([{name: "テーラードジャケット"},
+                       {name: "ノーカラージャケット"},
+                       {name: "Gジャン/デニムジャケット"},
                        {name: "レザージャケット"},
                        {name: "ダウンジャケット"},
+                       {name: "ライダースジャケット"},
+                       {name: "ミリタリージャケット"},
+                       {name: "ナイロンジャケット"},
                        {name: "フライトジャケット"},
+                       {name: "ダッフルコート"},
+                       {name: "ピーコート"},
+                       {name: "ステンカラーコート"},
                        {name: "トレンチコート"},
+                       {name: "モッズコート"},
+                       {name: "チェスターコート"},
                        {name: "スタジャン"},
                        {name: "スカジャン"},
                        {name: "ブルゾン"},
+                       {name: "マウンテンパーカー"},
                        {name: "ダウンベスト"},
+                       {name: "ポンチョ"},
+                       {name: "カバーオール"},
                        {name: "その他"}])
 men_3 = men.children.create(name: "パンツ")
 men_3.children.create([{name: "デニム/ジーンズ"},
@@ -141,22 +242,31 @@ men_3.children.create([{name: "デニム/ジーンズ"},
                        {name: "スラックス"},
                        {name: "チノパン"},
                        {name: "ショートパンツ"},
+                       {name: "ペインターパンツ"},
+                       {name: "サルエルパンツ"},
+                       {name: "オーバーオール"},
                        {name: "その他"}])
 men_4 = men.children.create(name: "靴")
 men_4.children.create([{name: "スニーカー"},
                        {name: "サンダル"},
                        {name: "ブーツ"},
+                       {name: "モカシン"},
                        {name: "ドレス/ビジネス"},
                        {name: "長靴/レインシューズ"},
+                       {name: "デッキシューズ"},
                        {name: "その他"}])
 men_5 = men.children.create(name: "バッグ")
 men_5.children.create([{name: "ショルダーバッグ"},
                        {name: "トートバッグ"},
                        {name: "ボストンバッグ"},
                        {name: "リュック/バックパック"},
+                       {name: "ウエストポーチ"},
                        {name: "ボディバッグ"},
+                       {name: "ドラムバッグ"},
                        {name: "ビジネスバッグ"},
                        {name: "トラベルバッグ"},
+                       {name: "メッセンジャーバッグ"},
+                       {name: "エコバッグ"},
                        {name: "その他"}])
 men_6 = men.children.create(name: "スーツ")
 men_6.children.create([{name: "スーツジャケット"},
@@ -188,21 +298,48 @@ men_9.children.create([{name: "財布"},
                        {name: "キーケース"},
                        {name: "キーホルダー"},
                        {name: "ネクタイ"},
+                       {name: "手袋"},
+                       {name: "ハンカチ"},
+                       {name: "ベルト"},
+                       {name: "マフラー"},
+                       {name: "ストール"},
+                       {name: "バンダナ"},
+                       {name: "ネックウォーマー"},
+                       {name: "サスペンダー"},
+                       {name: "ウォレットチェーン"},
                        {name: "サングラス/メガネ"},
                        {name: "モバイルケース/カバー"},
+                       {name: "手帳"},
+                       {name: "ストラップ"},
+                       {name: "ネクタイピン"},
+                       {name: "カフリンクス"},
+                       {name: "イヤーマフラー"},
                        {name: "傘/レインコート"},
+                       {name: "ミラー"},
+                       {name: "タバコグッズ"},
                        {name: "その他"}])
 men_10 = men.children.create(name: "時計")
-men_10.children.create([{name: "腕時計"},
+men_10.children.create([{name: "腕時計(アナログ)"},
+                        {name: "腕時計(デジタル)"},
                         {name: "ラバーベルト"},
                         {name: "レザーベルト"},
                         {name: "金属ベルト"},
                         {name: "その他"}])
-men_11 = men.children.create(name: "ファッション小物")
-men_11.children.create([{name: "ソックス"},
-                        {name: "アンダーウェア"},
+men_11 = men.children.create(name: "水着")
+men_11.children.create([{name: "一般水着"},
+                        {name: "スポーツ用"},
+                        {name: "アクセサリー"},
                         {name: "その他"}])
-men_12 = men.children.create(name: "その他")
+men_12 = men.children.create(name: "レッグウェア")
+men_12.children.create([{name: "ソックス"},
+                        {name: "レギンス/スパッツ"},
+                        {name: "レッグウォーマー"},
+                        {name: "その他"}])
+men_13 = men.children.create(name: "アンダーウェア")
+men_13.children.create([{name: "トランクス"},
+                        {name: "ボクサーパンツ"},
+                        {name: "その他"}])
+men_14 = men.children.create(name: "その他")
 
 # baby,kids
 baby_kids = Category.create(name: "ベビー・キッズ")
@@ -211,104 +348,224 @@ baby_kids_1.children.create([{name: "トップス"},
                              {name: "アウター"},
                              {name: "パンツ"},
                              {name: "スカート"},
+                             {name: "ワンピース"},
+                             {name: "ベビードレス"},
+                             {name: "おくるみ"},
+                             {name: "下着/肌着"},
+                             {name: "パジャマ"},
+                             {name: "ロンパース"},
                              {name: "その他"}])
 baby_kids_2 = baby_kids.children.create(name: "ベビー服(男の子用) ~95cm")
 baby_kids_2.children.create([{name: "トップス"},
                              {name: "アウター"},
                              {name: "パンツ"},
+                             {name: "おくるみ"},
                              {name: "下着/肌着"},
+                             {name: "パジャマ"},
                              {name: "ロンパース"},
                              {name: "その他"}])
-baby_kids_3 = baby_kids.children.create(name: "キッズ服(女の子用) 100cm~")
+baby_kids_3 = baby_kids.children.create(name: "ベビー服(男女兼用) ~95cm")
 baby_kids_3.children.create([{name: "トップス"},
                              {name: "アウター"},
                              {name: "パンツ"},
-                             {name: "スカート"},
-                             {name: "ワンピース"},
-                             {name: "下着/肌着"},
-                             {name: "パジャマ"},
-                             {name: "その他"}])
-baby_kids_4 = baby_kids.children.create(name: "キッズ服(男の子用) 100cm~")
-baby_kids_4.children.create([{name: "トップス"},
-                             {name: "アウター"},
-                             {name: "パンツ"},
+                             {name: "おくるみ"},
                              {name: "下着/肌着"},
                              {name: "パジャマ"},
                              {name: "ロンパース"},
                              {name: "その他"}])
-baby_kids_5 = baby_kids.children.create(name: "キッズ靴")
-baby_kids_5.children.create([{name: "スニーカー"},
+baby_kids_4 = baby_kids.children.create(name: "キッズ服(女の子用) 100cm~")
+baby_kids_4.children.create([{name: "コート"},
+                             {name: "ジャケット/上着"},
+                             {name: "トップス(Tシャツ/カットソー)"},
+                             {name: "トップス(トレーナー)"},
+                             {name: "トップス(チュニック)"},
+                             {name: "トップス(タンクトップ)"},
+                             {name: "トップス(その他)"},
+                             {name: "スカート"},
+                             {name: "パンツ"},
+                             {name: "ワンピース"},
+                             {name: "セットアップ"},
+                             {name: "パジャマ"},
+                             {name: "フォーマル/ドレス"},
+                             {name: "和服/浴衣/甚平"},
+                             {name: "水着"},
+                             {name: "その他"}])
+baby_kids_5 = baby_kids.children.create(name: "キッズ服(男の子用) 100cm~")
+baby_kids_5.children.create([{name: "コート"},
+                             {name: "ジャケット/上着"},
+                             {name: "トップス(Tシャツ/カットソー)"},
+                             {name: "トップス(トレーナー)"},
+                             {name: "トップス(その他)"},
+                             {name: "パンツ"},
+                             {name: "セットアップ"},
+                             {name: "パジャマ"},
+                             {name: "フォーマル"},
+                             {name: "和服/浴衣/甚平"},
+                             {name: "水着"},
+                             {name: "その他"}])
+baby_kids_6 = baby_kids.children.create(name: "キッズ服(男女兼用) 100cm~")
+baby_kids_6.children.create([{name: "コート"},
+                             {name: "ジャケット/上着"},
+                             {name: "トップス(Tシャツ/カットソー)"},
+                             {name: "トップス(トレーナー)"},
+                             {name: "トップス(その他)"},
+                             {name: "ボトムス"},
+                             {name: "パジャマ"},
+                             {name: "その他"}])
+baby_kids_7 = baby_kids.children.create(name: "キッズ靴")
+baby_kids_7.children.create([{name: "スニーカー"},
                              {name: "サンダル"},
                              {name: "ブーツ"},
                              {name: "長靴"},
                              {name: "その他"}])
-baby_kids_6 = baby_kids.children.create(name: "子ども用ファッション小物")
-baby_kids_6.children.create([{name: "靴下/スパッツ"},
+baby_kids_8 = baby_kids.children.create(name: "子ども用ファッション小物")
+baby_kids_8.children.create([{name: "靴下/スパッツ"},
                              {name: "帽子"},
                              {name: "エプロン"},
                              {name: "サスペンダー"},
+                             {name: "タイツ"},
+                             {name: "ハンカチ"},
+                             {name: "バンダナ"},
+                             {name: "ベルト"},
+                             {name: "マフラー"},
+                             {name: "傘"},
+                             {name: "手袋"},
+                             {name: "スタイ"},
+                             {name: "バッグ"},
                              {name: "その他"}])
-baby_kids_7 = baby_kids.children.create(name: "おむつ/トイレ/バス")
-baby_kids_7.children.create([{name: "おむつ用品"},
-                             {name: "トレーニング用品"},
+baby_kids_9 = baby_kids.children.create(name: "おむつ/トイレ/バス")
+baby_kids_9.children.create([{name: "おむつ用品"},
+                             {name: "おまる/補助便座"},
+                             {name: "トレーニングパンツ"},
+                             {name: "ベビーバス"},
                              {name: "お風呂用品"},
                              {name: "その他"}])
-baby_kids_8 = baby_kids.children.create(name: "授乳/食事")
-baby_kids_8.children.create([{name: "ミルク"},
+baby_kids_10 = baby_kids.children.create(name: "外出/移動用品")
+baby_kids_10.children.create([{name: "ベビーカー"},
+                            {name: "抱っこひも/スリング"},
+                            {name: "チャイルドシート"},
+                            {name: "その他"}])
+baby_kids_11 = baby_kids.children.create(name: "授乳/食事")
+baby_kids_11.children.create([{name: "ミルク"},
                              {name: "ベビーフード"},
-                             {name: "食器"},
+                             {name: "ベビー用食器"},
                              {name: "その他"}])
-baby_kids_9 = baby_kids.children.create(name: "外出/移動用品")
-baby_kids_9.children.create([{name: "ベビーカー"},
-                             {name: "抱っこひも/スリング"},
-                             {name: "チャイルドシート"},
-                             {name: "その他"}])
-baby_kids_10 = baby_kids.children.create(name: "ベビー家具/寝具/室内用品")
-baby_kids_10.children.create([{name: "ベッド"},
+baby_kids_12 = baby_kids.children.create(name: "ベビー家具/寝具/室内用品")
+baby_kids_12.children.create([{name: "ベッド"},
                               {name: "布団/毛布"},
                               {name: "イス"},
                               {name: "たんす"},
                               {name: "その他"}])
-baby_kids_11 = baby_kids.children.create(name: "おもちゃ")
-baby_kids_11.children.create([{name: "おふろのおもちゃ"},
+baby_kids_13 = baby_kids.children.create(name: "おもちゃ")
+baby_kids_13.children.create([{name: "おふろのおもちゃ"},
                               {name: "がらがら"},
+                              {name: "オルゴール"},
+                              {name: "ベビージム"},
+                              {name: "手押し車/カタカタ"},
                               {name: "知育玩具"},
-                              {name: "絵本"},
                               {name: "その他"}])
-baby_kids_11 = baby_kids.children.create(name: "その他")
+baby_kids_14 = baby_kids.children.create(name: "行事/記念品")
+baby_kids_14.children.create([{name: "お宮参り用品"},
+                              {name: "お食い初め用品"},
+                              {name: "アルバム"},
+                              {name: "手形/足形"},
+                              {name: "その他"}])
+baby_kids_15 = baby_kids.children.create(name: "その他")
+baby_kids_15.children.create([{name: "母子手帳用品"},
+                              {name: "その他"}])
 
 # インテリア・家具・キッチン
 interior_furniture_kitchen = Category.create(name: "インテリア・家具・キッチン")
-interior_furniture_kitchen_1 = interior_furniture_kitchen.children.create(name: "キッチン用品")
-interior_furniture_kitchen_1.children.create([{name: "鍋/フライパン"},
-                                              {name: "食器"},
-                                              {name: "キッチン雑貨"},
+interior_furniture_kitchen_1 = interior_furniture_kitchen.children.create(name: "キッチン/食器")
+interior_furniture_kitchen_1.children.create([{name: "食器"},
+                                              {name: "調理器具"},
+                                              {name: "収納/キッチン雑貨"},
+                                              {name: "弁当用品"},
+                                              {name: "カトラリー"},
+                                              {name: "テーブル用品"},
+                                              {name: "容器"},
+                                              {name: "エプロン"},
+                                              {name: "アルコールグッズ"},
+                                              {name: "浄水器"},
                                               {name: "その他"}])
-interior_furniture_kitchen_2 = interior_furniture_kitchen.children.create(name: "家具")
-interior_furniture_kitchen_2.children.create([{name: "テーブル/椅子"},
+interior_furniture_kitchen_2 = interior_furniture_kitchen.children.create(name: "ベッド/マットレス/寝具")
+interior_furniture_kitchen_2.children.create([{name: "シングルベッド"},
+                                              {name: "ダブルベッド"},
+                                              {name: "クィーンベッド"},
+                                              {name: "キングベッド"},
+                                              {name: "脚付きマットレスベッド"},
+                                              {name: "マットレス"},
+                                              {name: "すのこベッド"},
+                                              {name: "簡易ベッド/折りたたみベッド"},
+                                              {name: "布団/毛布"},
+                                              {name: "枕"},
+                                              {name: "シーツ/カバー"},
+                                              {name: "その他"}])
+interior_furniture_kitchen_3 = interior_furniture_kitchen.children.create(name: "ソファ/ソファベッド")
+interior_furniture_kitchen_3.children.create([{name: "ソファセット"},
                                               {name: "ソファ"},
-                                              {name: "ベッド"},
-                                              {name: "収納家具"},
+                                              {name: "オットマン"},
+                                              {name: "ローソファ"},
+                                              {name: "ソファベッド"},
+                                              {name: "ソファカバー"},
+                                              {name: "ビーズソファ/クッションソファ"},
                                               {name: "その他"}])
-interior_furniture_kitchen_3 = interior_furniture_kitchen.children.create(name: "インテリア用品")
-interior_furniture_kitchen_3.children.create([{name: "カーテン/ブラインド"},
+interior_furniture_kitchen_4 = interior_furniture_kitchen.children.create(name: "テーブル/チェア")
+interior_furniture_kitchen_4.children.create([{name: "ダイニングテーブル/チェア"},
+                                              {name: "ローテーブル"},
+                                              {name: "こたつ"},
+                                              {name: "事務机/学習机"},
+                                              {name: "アウトドア用"},
+                                              {name: "折りたたみイス"},
+                                              {name: "座椅子"},
+                                              {name: "その他"}])
+interior_furniture_kitchen_5 = interior_furniture_kitchen.children.create(name: "収納家具")
+interior_furniture_kitchen_5.children.create([{name: "リビング収納"},
+                                              {name: "キッチン収納"},
+                                              {name: "玄関/屋外収納"},
+                                              {name: "バス/トイレ収納"},
+                                              {name: "本棚"},
+                                              {name: "洋服タンス/押入れ収納"},
+                                              {name: "棚/ラック"},
+                                              {name: "ケース/ボックス"},
+                                              {name: "その他"},])
+interior_furniture_kitchen_6 = interior_furniture_kitchen.children.create(name: "インテリア用品")
+interior_furniture_kitchen_6.children.create([{name: "カーテン/ブラインド"},
                                               {name: "カーペット/ラグ"},
                                               {name: "ライト/照明"},
-                                              {name: "寝具"},
-                                              {name: "インテリア小物"},
+                                              {name: "その他"},])
+interior_furniture_kitchen_7 = interior_furniture_kitchen.children.create(name: "インテリア小物")
+interior_furniture_kitchen_7.children.create([{name: "ゴミ箱"},
+                                              {name: "ウェルカムボード"},
+                                              {name: "クッション/クッションカバー"},
+                                              {name: "フォトフレーム"},
+                                              {name: "マガジンラック"},
+                                              {name: "花瓶"},
+                                              {name: "傘立て"},
+                                              {name: "時計"},
+                                              {name: "鏡"},
+                                              {name: "観葉植物"},
                                               {name: "その他"}])
-interior_furniture_kitchen_4 = interior_furniture_kitchen.children.create(name: "その他")
+interior_furniture_kitchen_8 = interior_furniture_kitchen.children.create(name: "その他")
+interior_furniture_kitchen_8.children.create([{name: "季節用品"},
+                                              {name: "その他"},])
 
 # 本・音楽・ゲーム
 book_music_game = Category.create(name: "本・音楽・ゲーム")
 book_music_game_1 = book_music_game.children.create(name: "本")
 book_music_game_1.children.create([{name: "文学/小説"},
-                                   {name: "ノンフィクション"},
+                                   {name: "人文/社会"},
+                                   {name: "ノンフィクション/教養"},
+                                   {name: "地図/旅行ガイド"},
                                    {name: "ビジネス/経済"},
+                                   {name: "健康/医学"},
                                    {name: "コンピュータ/IT"},
-                                   {name: "趣味/暮らし/子育て"},
-                                   {name: "児童書/絵本"},
-                                   {name: "雑誌"},
+                                   {name: "趣味/スポーツ/実用"},
+                                   {name: "住まい/暮らし/子育て"},
+                                   {name: "アート/エンタメ"},
+                                   {name: "洋書"},
+                                   {name: "絵本"},
+                                   {name: "参考書"},
                                    {name: "その他"}])
 book_music_game_2 = book_music_game.children.create(name: "漫画")
 book_music_game_2.children.create([{name: "全巻セット"},
@@ -316,46 +573,266 @@ book_music_game_2.children.create([{name: "全巻セット"},
                                    {name: "少女漫画"},
                                    {name: "青年漫画"},
                                    {name: "女性漫画"},
+                                   {name: "同人誌"},
                                    {name: "その他"}])
-book_music_game_3 = book_music_game.children.create(name: "CD")
-book_music_game_3.children.create([{name: "邦楽"},
+book_music_game_3 = book_music_game.children.create(name: "雑誌")
+book_music_game_3.children.create([{name: "アート/エンタメ/ホビー"},
+                                   {name: "ファッション"},
+                                   {name: "ニュース/総合"},
+                                   {name: "趣味/スポーツ"},
+                                   {name: "その他"}])
+book_music_game_4 = book_music_game.children.create(name: "CD")
+book_music_game_4.children.create([{name: "邦楽"},
                                    {name: "洋楽"},
+                                   {name: "アニメ"},
                                    {name: "クラシック"},
+                                   {name: "K-POP/アジア"},
+                                   {name: "キッズ/ファミリー"},
                                    {name: "その他"}])
 book_music_game_4 = book_music_game.children.create(name: "DVD/Blue-ray")
 book_music_game_4.children.create([{name: "洋画"},
                                    {name: "邦画"},
                                    {name: "アニメ"},
+                                   {name: "TVアニメ"},
+                                   {name: "ミュージック"},
+                                   {name: "お笑い/バラエティ"},
+                                   {name: "スポーツ/フィットネス"},
+                                   {name: "キッズ/ファミリー"},
                                    {name: "その他"}])
-book_music_game_5 = book_music_game.children.create(name: "ゲーム")
+book_music_game_5 = book_music_game.children.create(name: "レコード")
+book_music_game_5.children.create([{name: "邦楽"},
+                                   {name: "洋楽"},
+                                   {name: "その他"}])
+book_music_game_5 = book_music_game.children.create(name: "テレビゲーム")
 book_music_game_5.children.create([{name: "家庭用ゲーム本体"},
                                    {name: "家庭用ゲームソフト"},
                                    {name: "携帯用ゲーム本体"},
                                    {name: "携帯用ゲームソフト"},
+                                   {name: "PCゲーム"},
                                    {name: "その他"}])
 
-# おもちゃ・ホビー
-toy_hobby = Category.create(name: "おもちゃ・ホビー")
-toy_hobby_1 = toy_hobby.children.create(name: "おもちゃ")
-toy_hobby_1.children.create([{name: "模型/プラモデル"},
-                             {name: "ぬいぐるみ"},
-                             {name: "その他"}])
-toy_hobby_2 = toy_hobby.children.create(name: "フィギュア")
-toy_hobby_2.children.create([{name: "コミック/アニメ"},
-                             {name: "ゲームキャラクター"},
-                             {name: "スポーツ"},
-                             {name: "その他"}])
+# おもちゃ・ホビー・グッズ
+toy_hobby_goods = Category.create(name: "おもちゃ・ホビー・グッズ")
+toy_hobby_goods_1 = toy_hobby_goods.children.create(name: "おもちゃ")
+toy_hobby_goods_1.children.create([{name: "キャラクターグッズ"},
+                                   {name: "ぬいぐるみ"},
+                                   {name: "小物/アクセサリー"},
+                                   {name: "模型/プラモデル"},
+                                   {name: "ミニカー"},
+                                   {name: "ラジコン"},
+                                   {name: "鉄道模型"},
+                                   {name: "その他"}])
+toy_hobby_goods_2 = toy_hobby_goods.children.create(name: "タレントグッズ")
+toy_hobby_goods_2.children.create([{name: "アイドル"},
+                                   {name: "ミュージシャン"},
+                                   {name: "タレント/お笑い芸人"},
+                                   {name: "スポーツ選手"},
+                                   {name: "その他"}])
+toy_hobby_goods_3 = toy_hobby_goods.children.create(name: "コミック/アニメグッズ")
+toy_hobby_goods_3.children.create([{name: "ストラップ"},
+                                   {name: "キーホルダー"},
+                                   {name: "バッジ"},
+                                   {name: "カード"},
+                                   {name: "クリアファイル"},
+                                   {name: "ポスター"},
+                                   {name: "タオル"},
+                                   {name: "その他"}])
+toy_hobby_goods_4 = toy_hobby_goods.children.create(name: "トレーディングカード")
+toy_hobby_goods_4.children.create([{name: "遊戯王"},
+                                   {name: "マジック：ザ・ギャザリング"},
+                                   {name: "ポケモンカードゲーム"},
+                                   {name: "デュエルマスターズ"},
+                                   {name: "バトルスピリッツ"},
+                                   {name: "プリパラ"},
+                                   {name: "アイカツ"},
+                                   {name: "カードファイト!!ヴァンガード"},
+                                   {name: "ヴァイスシュヴァルツ"},
+                                   {name: "プロ野球オーナーズリーグ"},
+                                   {name: "ベースボールヒーローズ"},
+                                   {name: "ドラゴンボール"},
+                                   {name: "スリーブ"},
+                                   {name: "その他"}])
+toy_hobby_goods_5 = toy_hobby_goods.children.create(name: "フィギュア")
+toy_hobby_goods_5.children.create([{name: "コミック/アニメ"},
+                                   {name: "特撮"},
+                                   {name: "ゲームキャラクター"},
+                                   {name: "SF/ファンタジー/ホラー"},
+                                   {name: "アメコミ"},
+                                   {name: "スポーツ"},
+                                   {name: "ミリタリー"},
+                                  {name: "その他"}])
+toy_hobby_goods_6 = toy_hobby_goods.children.create(name: "楽器/機材")
+toy_hobby_goods_6.children.create([{name: "エレキギター"},
+                                   {name: "アコースティックギター"},
+                                   {name: "ベース"},
+                                   {name: "エフェクター"},
+                                   {name: "アンプ"},
+                                   {name: "弦楽器"},
+                                   {name: "管楽器"},
+                                   {name: "鍵盤楽器"},
+                                   {name: "打楽器"},
+                                   {name: "和楽器"},
+                                   {name: "楽譜/スコア"},
+                                   {name: "レコーディング/PA機器"},
+                                   {name: "DJ機器"},
+                                   {name: "DTM/DAW"},
+                                   {name: "その他"}])
+toy_hobby_goods_7 = toy_hobby_goods.children.create(name: "コレクション")
+toy_hobby_goods_7.children.create([{name: "武具"},
+                                   {name: "使用済切手/官製ハガキ"},
+                                   {name: "旧貨幣/金貨/銀貨/記念硬貨"},
+                                   {name: "印刷物"},
+                                   {name: "ノベルティグッズ"},
+                                   {name: "その他"}])
+toy_hobby_goods_8 = toy_hobby_goods.children.create(name: "ミリタリー")
+toy_hobby_goods_8.children.create([{name: "トイガン"},
+                                   {name: "個人装備"},
+                                   {name: "その他"}])
+toy_hobby_goods_9 = toy_hobby_goods.children.create(name: "美術品")
+toy_hobby_goods_9.children.create([{name: "陶芸"},
+                                   {name: "ガラス"},
+                                   {name: "漆芸"},
+                                   {name: "金属工芸"},
+                                   {name: "絵画/タペストリ"},
+                                   {name: "版画"},
+                                   {name: "彫刻/オブジェクト"},
+                                   {name: "書"},
+                                   {name: "写真"},
+                                   {name: "画材"},
+                                   {name: "額縁"},
+                                   {name: "その他"}])
+toy_hobby_goods_10 = toy_hobby_goods.children.create(name: "その他")
+toy_hobby_goods_10.children.create([{name: "トランプ/UNO"},
+                                    {name: "カルタ/百人一首"},
+                                    {name: "ダーツ"},
+                                    {name: "ビリヤード"},
+                                    {name: "麻雀"},
+                                    {name: "パズル/ジグソーパズル"},
+                                    {name: "囲碁/将棋"},
+                                    {name: "オセロ/チェス"},
+                                    {name: "人生ゲーム"},
+                                    {name: "野球/サッカーゲーム"},
+                                    {name: "スポーツ"},
+                                    {name: "三輪車/乗り物"},
+                                    {name: "ヨーヨー"},
+                                    {name: "模型製作用品"},
+                                    {name: "鉄道"},
+                                    {name: "航空機"},
+                                    {name: "アマチュア無線"},
+                                    {name: "パチンコ/スロット"},
+                                    {name: "その他"}])
 
+cosme_perfume_beauty = Category.create(name: "コスメ・香水・美容")
+cosme_perfume_beauty_1 = cosme_perfume_beauty.children.create(name: "ベースメイク")
+cosme_perfume_beauty_1.children.create([{name: "ファンデーション"},
+                                        {name: "化粧下地"},
+                                        {name: "コントロールカラー"},
+                                        {name: "BBクリーム"},
+                                        {name: "CCクリーム"},
+                                        {name: "コンシーラー"},
+                                        {name: "フェイスパウダー"},
+                                        {name: "トライアルセット/サンプル"},
+                                        {name: "その他"}])
+cosme_perfume_beauty_2 = cosme_perfume_beauty.children.create(name: "メイクアップ")
+cosme_perfume_beauty_2.children.create([{name: "アイシャドウ"},
+                                        {name: "口紅"},
+                                        {name: "リップグロス"},
+                                        {name: "チーク"},
+                                        {name: "フェイスカラー"},
+                                        {name: "マスカラ"},
+                                        {name: "アイライナー"},
+                                        {name: "つけまつげ"},
+                                        {name: "アイブロウペンシル"},
+                                        {name: "パウダーアイブロウ"},
+                                        {name: "眉マスカラ"},
+                                        {name: "トライアルセット/サンプル"},
+                                        {name: "メイク道具/化粧小物"},
+                                        {name: "美顔用品/美顔ローラー"},
+                                        {name: "その他"}])
+cosme_perfume_beauty_3 = cosme_perfume_beauty.children.create(name: "ネイルケア")
+cosme_perfume_beauty_3.children.create([{name: "ネイルカラー"},
+                                        {name: "カラージェル"},
+                                        {name: "ネイルベースコート/トップコート"},
+                                        {name: "ネイルアート用品"},
+                                        {name: "ネイルパーツ"},
+                                        {name: "ネイルチップ/付け爪"},
+                                        {name: "手入れ用具"},
+                                        {name: "除光液"},
+                                        {name: "その他"}])
+cosme_perfume_beauty_4 = cosme_perfume_beauty.children.create(name: "香水")
+cosme_perfume_beauty_4.children.create([{name: "香水(女性用)"},
+                                        {name: "香水(男性用)"},
+                                        {name: "ユニセックス"},
+                                        {name: "ボディミスト"},
+                                        {name: "その他"}])
+cosme_perfume_beauty_5 = cosme_perfume_beauty.children.create(name: "スキンケア/基礎化粧品")
+cosme_perfume_beauty_5.children.create([{name: "化粧水/ローション"},
+                                        {name: "乳液/ミルク"},
+                                        {name: "美容液"},
+                                        {name: "ぬいぐるみ"},
+                                        {name: "フェイスクリーム"},
+                                        {name: "洗顔料"},
+                                        {name: "クレンジング/メイク落とし"},
+                                        {name: "パック/フェイスマスク"},
+                                        {name: "ジェル/ゲル"},
+                                        {name: "ブースター/導入液"},
+                                        {name: "アイケア"},
+                                        {name: "リップケア"},
+                                        {name: "トライアルセット/サンプル"},
+                                        {name: "洗顔グッズ"},
+                                        {name: "その他"}])
+cosme_perfume_beauty_6 = cosme_perfume_beauty.children.create(name: "ヘアケア")
+cosme_perfume_beauty_6.children.create([{name: "シャンプー"},
+                                        {name: "トリートメント"},
+                                        {name: "コンディショナー/リンス"},
+                                        {name: "スタイリング剤"},
+                                        {name: "カラーリング剤"},
+                                        {name: "ブラシ"},
+                                        {name: "その他"}])
+cosme_perfume_beauty_7 = cosme_perfume_beauty.children.create(name: "ボディケア")
+cosme_perfume_beauty_7.children.create([{name: "オイル/クリーム"},
+                                        {name: "ハンドクリーム"},
+                                        {name: "ローション"},
+                                        {name: "日焼け止め/サンオイル"},
+                                        {name: "ボディソープ"},
+                                        {name: "入浴剤"},
+                                        {name: "制汗/デオドラント"},
+                                        {name: "フットケア"},
+                                        {name: "その他"}])
+cosme_perfume_beauty_8 = cosme_perfume_beauty.children.create(name: "オーラルケア")
+cosme_perfume_beauty_8.children.create([{name: "口臭防止/エチケット用品"},
+                                        {name: "歯ブラシ"},
+                                        {name: "その他"}])
+cosme_perfume_beauty_9 = cosme_perfume_beauty.children.create(name: "リラクゼーション")
+cosme_perfume_beauty_9.children.create([{name: "エッセンシャルオイル"},
+                                        {name: "芳香器"},
+                                        {name: "お香/香炉"},
+                                        {name: "キャンドル"},
+                                        {name: "リラクゼーショングッズ"},
+                                        {name: "その他"}])
+cosme_perfume_beauty_10 = cosme_perfume_beauty.children.create(name: "ダイエット")
+cosme_perfume_beauty_10.children.create([{name: "ダイエット食品"},
+                                         {name: "エクササイズ用品"},
+                                         {name: "体重計"},
+                                         {name: "体脂肪計"},
+                                         {name: "その他"}])
+cosme_perfume_beauty_11 = cosme_perfume_beauty.children.create(name: "その他")
+cosme_perfume_beauty_11.children.create([{name: "健康用品"},
+                                         {name: "看護/介護用品"},
+                                         {name: "救急/衛生用品"},
+                                         {name: "その他"}]) 
 # 家電・スマホ・カメラ
 appliance_smartphone_camera = Category.create(name: "家電・スマホ・カメラ")
 appliance_smartphone_camera_1 = appliance_smartphone_camera.children.create(name: "スマートフォン/携帯電話")
 appliance_smartphone_camera_1.children.create([{name: "スマートフォン本体"},
                                                {name: "バッテリー/充電器"},
                                                {name: "携帯電話本体"},
+                                               {name: "PHS"},
                                                {name: "その他"}])
 appliance_smartphone_camera_2 = appliance_smartphone_camera.children.create(name: "スマホアクセサリー")
 appliance_smartphone_camera_2.children.create([{name: "Android用ケース"},
                                                {name: "iPhone用ケース"},
+                                               {name: "カバー"},
                                                {name: "イヤホンジャック"},
                                                {name: "ストラップ"},
                                                {name: "フィルム"},
