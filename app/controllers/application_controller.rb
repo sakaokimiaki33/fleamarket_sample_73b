@@ -4,8 +4,8 @@ class ApplicationController < ActionController::Base
     # Devise でメールアドレスとパスワード以外の値を受け取る為にストロングパラメータ（ "configure_permitted_parameters" メソッド）を設定する。
   protect_from_forgery with: :exception
 
-  rescue_from StandardError, with: :render_500 unless Rails.env.development?
-  rescue_from ActiveRecord::RecordNotFound, with: :render_404 unless Rails.env.development?
+  # rescue_from StandardError, with: :render_500 unless Rails.env.development?
+  # rescue_from ActiveRecord::RecordNotFound, with: :render_404 unless Rails.env.development?
 
   def render_404(e = nil)
     if e
