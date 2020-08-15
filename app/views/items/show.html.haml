@@ -9,8 +9,8 @@
     .product__image--small
       %ul.product__image--small__list
         %li.product__image--small__list__1
-          = @item.image.each do |image|
-            = image_tag image.url
+          - @item.images.each do |image|
+            = image_tag image.image.url, width: "100", height: "100"
     .product__detail__box__price
       .product__detail__box__price__number 
         = @item.price
@@ -55,7 +55,7 @@
       .alert__btn
         = link_to "不適切な商品の通報" 
     .product__detail__edit__delete__buy
-      -if user_signed_in? && current_user.id == @item.buyer_id
+      -if user_signed_in? && current_user.id == @item.saler_id
         = link_to "編集", class: "product__detail__edit"
         = link_to "削除", class: "product__detail__delete"
       -else user_signed_in?

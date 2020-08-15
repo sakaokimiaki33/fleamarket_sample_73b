@@ -1,10 +1,10 @@
 class ItemsController < ApplicationController
 
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_item, only: [:show]
+  # before_action :set_item, only: [:show]
   before_action :move_to_signin, except: [:index, :edit, :update, :show]
   before_action :limit_editer, only: [:edit, :update]
-  before_action :set_item, only: [:edit, :update]
+  before_action :set_item, only: [:edit, :update, :show]
 
   def index
     # redirect_to new_item_path
@@ -12,7 +12,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
   end
 
   def new
