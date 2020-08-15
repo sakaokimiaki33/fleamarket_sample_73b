@@ -11,6 +11,10 @@ class ItemsController < ApplicationController
     @items = Item.all.order('id DESC').limit(4)
   end
 
+  def show
+    @item = Item.find(params[:id])
+  end
+
   def new
     @item = Item.new
     @item.images.new

@@ -60,7 +60,7 @@
         = link_to "編集", class: "product__detail__edit"
         = link_to "削除", class: "product__detail__delete"
       -else user_signed_in?
-        = link_to "商品購入", class: "product__detail__buy"
+        = link_to "商品購入", purchase_path(@item) 
 
 
 

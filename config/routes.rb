@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     collection do
       post 'pay', to: 'items#pay'
       get 'pickup',to: 'items#pickup'
+      get 'show', to: 'items#show'
     end
   end
 
@@ -21,16 +22,13 @@ Rails.application.routes.draw do
   end
 
   resources :purchase, only: [:index] do
-    collection do
+    member do
       get 'index', to: 'purchase#index'
       post 'pay', to: 'purchase#pay'
       get 'done', to: 'purchase#done'
     end
   end
   resources :card, only: [:new, :show]
-  resources :purchase, only: [:index, :done]
-  resources :product_detail, only:[:index]
-  resources :items, except: :show
   resources :products,only:[:index, :new]
   resources :mypage, only:[:index, :new]
 end
