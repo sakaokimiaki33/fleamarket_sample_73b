@@ -33,8 +33,8 @@ class ItemsController < ApplicationController
   def edit
   end
 
-  def show
-  end
+  # def show
+  # end
 
   def update
     if @item.update(item_update_params)

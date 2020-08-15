@@ -6,8 +6,7 @@ class PurchaseController < ApplicationController
     #itemsテーブルから値を直接指定して引っ張ってきている
     @item = Item.find(params[:id])
     image = params[:image]
-    @address = Address.find(1)
-    # @address = Address.find(current_user.address[:id])
+    @address = Address.find(current_user.address[:id])
     card = @cards.first
     #テーブルからpayjpの顧客IDを検索し変数化して取得
     if card.blank?

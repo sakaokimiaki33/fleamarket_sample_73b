@@ -9,8 +9,8 @@
     .product__image--small
       %ul.product__image--small__list
         %li.product__image--small__list__1
-          = @item.image.each do |image|
-            = image_tag image.url
+          = @item.images.each do |image|
+            = image_tag image.image.url
     .product__detail__box__price
       .product__detail__box__price__number 
         = @item.price
