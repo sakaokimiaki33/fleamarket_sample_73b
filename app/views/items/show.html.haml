@@ -1,4 +1,3 @@
-
 = render 'renderpage/header'
 
 .product__detail__main
@@ -6,12 +5,12 @@
     .product__detail__box__name 
       = @item.name
     .product__image
-      %img{ src: "/assets/product-detail1.jpg", class:"product__image__1" }
+      = image_tag @item.images[0].image.url
     .product__image--small
       %ul.product__image--small__list
         %li.product__image--small__list__1
-          %img{ src: "/assets/product-detail2.jpg", class:"product__image__2" }
-          %img{ src: "/assets/product-detail3.jpg", class:"product__image__3" }
+          = @item.image.each do |image|
+            = image_tag image.url
     .product__detail__box__price
       .product__detail__box__price__number 
         = @item.price
@@ -80,4 +79,3 @@
   .other__option
     同じカテゴリーの商品をもっと見る
 = render 'renderpage/footer'
-
