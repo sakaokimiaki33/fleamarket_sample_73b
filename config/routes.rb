@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     collection do
       post 'pay', to: 'items#pay'
       get 'pickup',to: 'items#pickup'
+      post 'show', to: 'items#create'
       get 'show', to: 'items#show'
     end
   end
