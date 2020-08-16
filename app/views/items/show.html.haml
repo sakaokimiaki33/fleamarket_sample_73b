@@ -1,4 +1,3 @@
-
 = render 'renderpage/header'
 
 .product__detail__main
@@ -10,8 +9,8 @@
     .product__image--small
       %ul.product__image--small__list
         %li.product__image--small__list__1
-          - @item.images.each do |image|
-            = image_tag image.image.url, width: "100", height: "100"
+          = @item.images.each do |image|
+            = image_tag image.image.url
     .product__detail__box__price
       .product__detail__box__price__number 
         = @item.price
@@ -22,7 +21,7 @@
       %tr
         %th 出品者
         %td 
-          = current_user.nickname
+          = @item.name
       %tr
         %th カテゴリー
         %td
@@ -61,12 +60,10 @@
         = link_to "不適切な商品の通報" 
     .product__detail__edit__delete__buy
       -if user_signed_in? && current_user.id == @item.saler_id
-        = link_to "編集", edit_item_path
-        -# = link_to "編集", class: "product__detail__edit"
+        = link_to "編集", class: "edit_item_path"
         = link_to "削除", class: "product__detail__delete"
       -else user_signed_in?
-        = link_to "商品購入", purchase_index_path
-        -# = link_to "商品購入", class: "product__detail__buy"
+        = link_to "商品購入", purchase_path(@item)
 
 
 
