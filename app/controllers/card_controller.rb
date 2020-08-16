@@ -4,8 +4,8 @@ class CardController < ApplicationController
   require "payjp"
 
   def new
-    cards = Card.where(user_id: current_user.id)
-    redirect_to action: "show" if cards.exists?
+    card = Card.where(user_id: current_user.id)
+    redirect_to action: "show" if card.exists?
   end
 
   def pay #payjpとCardのデータベース作成を実施します。

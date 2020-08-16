@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update]
   before_action :move_to_signin, except: [:index, :edit, :update]
   before_action :limit_editer, only: [:edit, :update]
-  # before_action :set_item, only: [:edit, :update]
+ 
 
   def index
     # redirect_to new_item_path
@@ -32,9 +32,19 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @category_id = @item.category_id
+    @category_parent = Category.find(@category_id).parent.parent
+    @category_child = Category.find(@category_id).parent
+    @category_grandchild = Category.find(@category_id)
   end
 
   def edit
+    @item = Item.find(params[:id])
+
+    @category_parent_array = ["選択してください"]
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.id
+    end
   end
 
   def update
@@ -43,6 +53,7 @@ class ItemsController < ApplicationController
     else
       render :edit
     end
+    
   end
 
   def destroy

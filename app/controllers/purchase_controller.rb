@@ -4,12 +4,12 @@ class PurchaseController < ApplicationController
 
   def index
     #itemsテーブルから値を直接指定して引っ張ってきている
-    @item = Item.find(2)
+    @item = Item.find(params[:id])
     image = params[:image]
-    @address = Address.find(2)
-    card = cards.first
+    @address = Address.find(current_user.address[:id])
+    card = @cards.first
     #テーブルからpayjpの顧客IDを検索し変数化して取得
-    if card.present?
+    if card.blank?
       #登録された情報がない場合にカード登録画面に移動
       redirect_to controller: "card", action: "new"
     else
@@ -22,9 +22,9 @@ class PurchaseController < ApplicationController
   end
 
   def pay
-      @item = Item.find(2)
+      @item = Item.find(params[:id])
       price = @item.price*1.1
-      card = cards.first
+      card = @cards.first
       Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
       Payjp::Charge.create(
       :amount => price.truncate, #支払金額を入力（itemテーブル等に紐づけるべき?）
@@ -32,23 +32,21 @@ class PurchaseController < ApplicationController
       :currency => 'jpy', #日本円
     )
     
-    @item = Item.find(2)
-    @item.buyer += 1
+    @item = Item.find(params[:id])
     if @item.save
-      redirect_to action: 'done' #完了画面に移動
+      redirect_to action: `done`
     else
-      redirect_to action: 'index'
+      redirect_to action: `index`
     end
   end
   
   def done
     @item= Item.find(params[:id])
-    @item.update( buyer: current_user.id)
+    @item.update( buyer_id: current_user.id)
   end
 
   def set_cards
-    cards = Card.where(user_id: current_user.id)
+    @cards = Card.where(user_id: current_user.id)
   end
-
-
+  
 end
