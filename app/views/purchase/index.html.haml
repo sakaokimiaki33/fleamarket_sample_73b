@@ -5,7 +5,7 @@
     %h2 購入内容の確認
     .buyinfo__content__item
       .buyinfo__content__item--images
-        %img{:src => "#{@item.image}"}
+        %img{:src => "#{@item.images.first.image.url}"}
       .buyinfo__content__item--text
         %p 
         = @item.name
@@ -67,6 +67,6 @@
       = form_tag(action: :pay, method: :post) do
         %button.buyinfo__content__const--btn 
           購入する
-= render 'layouts/error_messages', model: f.object
+-# = render 'layouts/error_messages', model: f.object
 = render 'renderpage/footer'
 
