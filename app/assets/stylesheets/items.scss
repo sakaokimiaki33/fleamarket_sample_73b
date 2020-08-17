@@ -227,7 +227,17 @@
     line-height: 1.4em;
   }
 }
-
+//  岡田追記=====================================
+  .category-select-wrapper {
+    &__box--select{
+      height: 35px;
+      width: 100%;
+      border: 1px solid #cccc;
+      border-radius: 4px;
+      outline: none;
+      padding: 0 16px;
+    }
+  }
 
 
 
