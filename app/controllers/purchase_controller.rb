@@ -34,9 +34,9 @@ class PurchaseController < ApplicationController
     
     @item = Item.find(params[:id])
     if @item.save
-      redirect_to action: 'done' #完了画面に移動
-    else
-      redirect_to action: 'index'
+      redirect_to action: 'done'
+        else
+      redirect_to action: `index`
     end
   end
   
@@ -48,6 +48,5 @@ class PurchaseController < ApplicationController
   def set_cards
     @cards = Card.where(user_id: current_user.id)
   end
-
-
+  
 end

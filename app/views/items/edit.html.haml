@@ -56,7 +56,10 @@
         .products__detail__category
           カテゴリー
           %span 必須
-          .products__main__name__box
+          .category-select-wrapper
+            .category-select-wrapper__box
+            = form.collection_select :category_id, Category.roots, :id, :name, {include_blank: "選択してください"},  class: 'category-select-wrapper__box--select', id: 'parent_category'
+          
         .products__main__name
           ブランド
           .products__detail__brand__side  任意

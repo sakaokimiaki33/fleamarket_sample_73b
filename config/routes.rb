@@ -8,9 +8,11 @@ Rails.application.routes.draw do
   resources :items do
     collection do
       post 'pay', to: 'items#pay'
-      get 'pickup',to: 'items#pickup'
       post 'show', to: 'items#create'
       get 'show', to: 'items#show'
+      get 'pickup',to: 'items#pickup'
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
     end
   end
 

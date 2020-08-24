@@ -1,8 +1,11 @@
 class Item < ApplicationRecord
   # has_many :comments, dependent: :destroy
-  # belongs_to :category
   # belongs_to :user
+
   has_many :images, dependent: :destroy
+
+  belongs_to :category
+
   accepts_nested_attributes_for :images, allow_destroy: true
   
   extend ActiveHash::Associations::ActiveRecordExtensions
@@ -12,6 +15,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :shipping_date
   belongs_to :saler, class_name: "User", optional: true
   belongs_to :buyer, class_name: "User", optional: true
+  
 
   validates :images, presence: { message: 'は１枚以上登録してください' }
   validates :name, :price, :product_description, presence: true
