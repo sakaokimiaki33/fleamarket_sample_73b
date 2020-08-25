@@ -34,8 +34,8 @@ class PurchaseController < ApplicationController
     
     @item = Item.find(params[:id])
     if @item.save
-      redirect_to action: `done`
-    else
+      redirect_to action: 'done'
+        else
       redirect_to action: `index`
     end
   end
