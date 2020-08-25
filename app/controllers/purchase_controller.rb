@@ -1,7 +1,7 @@
 class PurchaseController < ApplicationController
+  before_action :move_to_signin
   before_action :set_cards,only: [:index, :pay]
   require 'payjp'
-  before_action :move_to_signin
 
   def index
     #itemsテーブルから値を直接指定して引っ張ってきている
