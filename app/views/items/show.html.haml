@@ -5,12 +5,22 @@
     .product__detail__box__name 
       = @item.name
     .product__image
-      = image_tag @item.images[0].image.url
+      = image_tag @item.images[0].image.url, class: "big-image"
     .product__image--small
       %ul.product__image--small__list
         %li.product__image--small__list__1
-          = @item.images.each do |image|
-            = image_tag image.image.url
+          - if @item.images[1]
+            = image_tag @item.images[1].image.url, class: "small-image"
+        %li.product__image--small__list__2
+          - if @item.images[2]
+            = image_tag @item.images[2].image.url, class: "small-image"
+        %li.product__image--small__list__3
+          - if @item.images[3]
+            = image_tag @item.images[3].image.url, class: "small-image"
+        %li.product__image--small__list__4
+          - if @item.images[4]
+            = image_tag @item.images[4].image.url, class: "small-image"
+
     .product__detail__box__price
       .product__detail__box__price__number 
         = @item.price
