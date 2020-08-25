@@ -1,9 +1,11 @@
 class Item < ApplicationRecord
   # has_many :comments, dependent: :destroy
   # belongs_to :user
+
+  has_many :images, dependent: :destroy
+
   belongs_to :category
-  
-  has_many :images
+
   accepts_nested_attributes_for :images, allow_destroy: true
   
   extend ActiveHash::Associations::ActiveRecordExtensions
