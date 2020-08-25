@@ -1,6 +1,7 @@
 class PurchaseController < ApplicationController
   before_action :set_cards,only: [:index, :pay]
   require 'payjp'
+  before_action :move_to_signin
 
   def index
     #itemsテーブルから値を直接指定して引っ張ってきている
@@ -47,6 +48,10 @@ class PurchaseController < ApplicationController
 
   def set_cards
     @cards = Card.where(user_id: current_user.id)
+  end
+
+  def move_to_signin
+    redirect_to '/users/sign_in' unless user_signed_in?
   end
   
 end
