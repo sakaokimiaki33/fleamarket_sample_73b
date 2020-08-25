@@ -72,8 +72,9 @@
       -if user_signed_in? && current_user.id == @item.saler_id
         = link_to "編集", edit_item_path
         = link_to "削除", "/items/#{@item.id}", method: :delete, class: "product__detail__delete"
-      -else user_signed_in?
-        = link_to "商品購入", purchase_path(@item) 
+      -elsif user_signed_in? && @item.buyer_id == nil
+        = link_to "商品購入", purchase_path(@item)
+      -else
 
 
 
