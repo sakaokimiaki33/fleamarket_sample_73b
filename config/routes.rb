@@ -32,6 +32,6 @@ Rails.application.routes.draw do
     end
   end
   resources :card, only: [:new, :show]
-  resources :products,only:[:index, :new]
+  resources :products,only:[:index, :new, :pickup]
   resources :mypage, only:[:index, :new]
 end
