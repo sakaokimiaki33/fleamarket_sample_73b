@@ -1,17 +1,12 @@
 class ItemsController < ApplicationController
 
   before_action :authenticate_user!, except: [:index, :show, :pickup]
-  # before_action :set_item, only: [:show]
   before_action :move_to_signin, except: [:index, :edit, :update, :show, :pickup]
   before_action :limit_editer, only: [:edit, :update]
   before_action :set_item, only: [:edit, :update, :show]
 
   def index
-    # redirect_to new_item_path
     @items = Item.all.order('id DESC').limit(4)
-  end
-
-  def show
   end
 
   def new
@@ -35,24 +30,20 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @item = Item.find(params[:id])
     @category_id = @item.category_id
     @category_parent = Category.find(@category_id).parent.parent
     @category_child = Category.find(@category_id).parent
     @category_grandchild = Category.find(@category_id)
-    @user = User.find(params[:id])
   end
 
   def edit
     @item = Item.find(params[:id])
-
     @category_parent_array = ["選択してください"]
     Category.where(ancestry: nil).each do |parent|
       @category_parent_array << parent.id
     end
   end
-
-  # def show
-  # end
 
   def update
     if @item.update(item_update_params)
@@ -60,7 +51,6 @@ class ItemsController < ApplicationController
     else
       render :edit
     end
-    
   end
 
   def destroy
@@ -106,5 +96,4 @@ class ItemsController < ApplicationController
   def set_item
     @item = Item.find(params[:id])
   end
-
 end
