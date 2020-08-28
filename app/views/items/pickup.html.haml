@@ -5,8 +5,9 @@
     ピックアップカテゴリー
   .new-items__products
     %div.new-items__products__lists.all
+    .new-items__products__lists
       - @items.each do |item|
-        = link_to pickup_items_path do
+        = link_to item_path(item) do
           -if item.buyer == nil
             .new-items__products__lists__list
               .new-items__products__lists__list--pic
