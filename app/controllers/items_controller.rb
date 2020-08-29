@@ -62,7 +62,8 @@ class ItemsController < ApplicationController
   end
 
   def pickup
-    @items = Item.all.page(params[:page]).per(10).order('id DESC')
+    # @items = Item.all.order('id DESC').limit(4)
+    @items = Item.all.page(params[:page]).per(10).order('id DESC').limit(4)
   end 
 
   def get_category_children
