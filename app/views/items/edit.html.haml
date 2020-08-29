@@ -58,8 +58,20 @@
           %span 必須
           .category-select-wrapper
             .category-select-wrapper__box
-            = form.collection_select :category_id, Category.roots, :id, :name, {include_blank: "選択してください"},  class: 'category-select-wrapper__box--select', id: 'parent_category'
-          
+            .category-wrapper-box
+              .category-wrapper-select
+                .category-wrapper-select__box
+                  = form.select :parent_name, @category_parent_array, {selected:@item.category.parent.parent.name}, { class: 'category-select-wrapper__box--select', id: 'parent_category'}
+              .category-wrapper-select#children_wrapper
+                .category-wrapper-select__box
+                  = form.select :child_id, options_for_select(@category_children_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @item.category.parent.id}),{}, {class: 'category-select-wrapper__box--select', id: 'child_category'}
+              .category-wrapper-select#grandchildren_wrapper
+                .category-wrapper-select__box
+                  = form.select :category_id, options_for_select(@category_grandchildren_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @item.category.id}),{}, {class: 'category-select-wrapper__box--select', id: 'grandchild_category'}
+
+
+
+
         .products__main__name
           ブランド
           .products__detail__brand__side  任意
